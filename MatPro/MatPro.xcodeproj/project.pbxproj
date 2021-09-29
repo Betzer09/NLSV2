@@ -32,6 +32,9 @@
 		23F2B0912704044B0092CFC4 /* ProximaNova-Reg.otf in Resources */ = {isa = PBXBuildFile; fileRef = 23F2B08C270404430092CFC4 /* ProximaNova-Reg.otf */; };
 		23F2B0942704062F0092CFC4 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 23F2B0932704062F0092CFC4 /* Realm */; };
 		23F2B0962704062F0092CFC4 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 23F2B0952704062F0092CFC4 /* RealmSwift */; };
+		23F2B09927040DDD0092CFC4 /* ScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F2B09827040DDD0092CFC4 /* ScoreManager.swift */; };
+		23F2B09C27040E690092CFC4 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F2B09B27040E690092CFC4 /* Score.swift */; };
+		23F2B09F27041AF60092CFC4 /* ScoreContants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F2B09E27041AF60092CFC4 /* ScoreContants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +62,9 @@
 		23F2B08C270404430092CFC4 /* ProximaNova-Reg.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Reg.otf"; sourceTree = "<group>"; };
 		23F2B08D270404430092CFC4 /* ProximaNova-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Bold.otf"; sourceTree = "<group>"; };
 		23F2B08E270404430092CFC4 /* ProximaNova-Sbold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Sbold.otf"; sourceTree = "<group>"; };
+		23F2B09827040DDD0092CFC4 /* ScoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreManager.swift; sourceTree = "<group>"; };
+		23F2B09B27040E690092CFC4 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
+		23F2B09E27041AF60092CFC4 /* ScoreContants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreContants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +100,8 @@
 		23F2B054270401990092CFC4 /* MatPro */ = {
 			isa = PBXGroup;
 			children = (
+				23F2B09A27040E600092CFC4 /* Models */,
+				23F2B09727040DC70092CFC4 /* Controllers */,
 				23F2B069270402EE0092CFC4 /* Uitls */,
 				23F2B055270401990092CFC4 /* AppDelegate.swift */,
 				23F2B057270401990092CFC4 /* SceneDelegate.swift */,
@@ -151,6 +159,31 @@
 				23F2B08E270404430092CFC4 /* ProximaNova-Sbold.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		23F2B09727040DC70092CFC4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				23F2B09827040DDD0092CFC4 /* ScoreManager.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		23F2B09A27040E600092CFC4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				23F2B09D27041AEC0092CFC4 /* Score */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		23F2B09D27041AEC0092CFC4 /* Score */ = {
+			isa = PBXGroup;
+			children = (
+				23F2B09B27040E690092CFC4 /* Score.swift */,
+				23F2B09E27041AF60092CFC4 /* ScoreContants.swift */,
+			);
+			path = Score;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,11 +278,14 @@
 				23F2B0832704031A0092CFC4 /* UITapGestureRecognizer+Ext.swift in Sources */,
 				23F2B0822704031A0092CFC4 /* String+Ext.swift in Sources */,
 				23F2B0862704031A0092CFC4 /* UIImage+Ext.swift in Sources */,
+				23F2B09F27041AF60092CFC4 /* ScoreContants.swift in Sources */,
+				23F2B09927040DDD0092CFC4 /* ScoreManager.swift in Sources */,
 				23F2B07C2704031A0092CFC4 /* Double+Ext.swift in Sources */,
 				23F2B07E2704031A0092CFC4 /* UIFont+Ext.swift in Sources */,
 				23F2B0842704031A0092CFC4 /* DateFormatter+Ext.swift in Sources */,
 				23F2B058270401990092CFC4 /* SceneDelegate.swift in Sources */,
 				23F2B07A2704031A0092CFC4 /* Encodable+Ext.swift in Sources */,
+				23F2B09C27040E690092CFC4 /* Score.swift in Sources */,
 				23F2B07B2704031A0092CFC4 /* UITextView+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
