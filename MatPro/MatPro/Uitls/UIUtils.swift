@@ -54,6 +54,7 @@ class UIUtils {
 public enum Storyboards: String {
     /// The root tab bar
     case main
+    case recording
     
     /**
      Creates a storyboard instance
