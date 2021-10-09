@@ -44,27 +44,6 @@ class UIUtils {
             
         }
     }
-    
-    /// Presents the main login screen
-    static func presentAuth() {
-        DispatchQueue.main.async {
-            let scene = UIApplication.shared.connectedScenes.first
-            
-            if let sd : SceneDelegate = (scene?.delegate as? SceneDelegate) {
-                sd.window?.rootViewController = Storyboards.auth.initialize(storyboardName: "login")
-            }
-        }
-    }
-    
-    static func presentVideo() {
-        DispatchQueue.main.async {
-            let scene = UIApplication.shared.connectedScenes.first
-            
-            if let sd : SceneDelegate = (scene?.delegate as? SceneDelegate) {
-                sd.window?.rootViewController = Storyboards.video.initialize()
-            }
-        }
-    }
 }
 
 // MARK: - App Navigation
@@ -75,11 +54,6 @@ class UIUtils {
 public enum Storyboards: String {
     /// The root tab bar
     case main
-    case auth
-    case workoutList
-    case workoutDetails
-    case exerciseDetails
-    case video
     
     /**
      Creates a storyboard instance

@@ -37,6 +37,7 @@
 		23F2B09F27041AF60092CFC4 /* ScoreContants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F2B09E27041AF60092CFC4 /* ScoreContants.swift */; };
 		23F2B0B027041E830092CFC4 /* ScoreManagerLogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F2B0AF27041E830092CFC4 /* ScoreManagerLogicTests.swift */; };
 		23FBDFA6271251FA00860E27 /* LaunchLoading.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23FBDFA5271251FA00860E27 /* LaunchLoading.storyboard */; };
+		23FBDFA92712574B00860E27 /* LaunchLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FBDFA82712574B00860E27 /* LaunchLoadingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		23F2B0A827041E430092CFC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		23F2B0AF27041E830092CFC4 /* ScoreManagerLogicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreManagerLogicTests.swift; sourceTree = "<group>"; };
 		23FBDFA5271251FA00860E27 /* LaunchLoading.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchLoading.storyboard; sourceTree = "<group>"; };
+		23FBDFA82712574B00860E27 /* LaunchLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchLoadingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,9 +234,18 @@
 		23FBDFA4271251E700860E27 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				23FBDFA5271251FA00860E27 /* LaunchLoading.storyboard */,
+				23FBDFA72712572100860E27 /* LaunchLoading */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		23FBDFA72712572100860E27 /* LaunchLoading */ = {
+			isa = PBXGroup;
+			children = (
+				23FBDFA5271251FA00860E27 /* LaunchLoading.storyboard */,
+				23FBDFA82712574B00860E27 /* LaunchLoadingViewController.swift */,
+			);
+			path = LaunchLoading;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,6 +374,7 @@
 				23F2B0862704031A0092CFC4 /* UIImage+Ext.swift in Sources */,
 				23F2B09F27041AF60092CFC4 /* ScoreContants.swift in Sources */,
 				23F2B09927040DDD0092CFC4 /* ScoreManager.swift in Sources */,
+				23FBDFA92712574B00860E27 /* LaunchLoadingViewController.swift in Sources */,
 				23F2B07C2704031A0092CFC4 /* Double+Ext.swift in Sources */,
 				23F2B07E2704031A0092CFC4 /* UIFont+Ext.swift in Sources */,
 				23F2B0842704031A0092CFC4 /* DateFormatter+Ext.swift in Sources */,
