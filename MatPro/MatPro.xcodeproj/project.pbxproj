@@ -36,6 +36,7 @@
 		23F2B09C27040E690092CFC4 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F2B09B27040E690092CFC4 /* Score.swift */; };
 		23F2B09F27041AF60092CFC4 /* ScoreContants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F2B09E27041AF60092CFC4 /* ScoreContants.swift */; };
 		23F2B0B027041E830092CFC4 /* ScoreManagerLogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F2B0AF27041E830092CFC4 /* ScoreManagerLogicTests.swift */; };
+		23FBDFA6271251FA00860E27 /* LaunchLoading.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23FBDFA5271251FA00860E27 /* LaunchLoading.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		23F2B0A427041E430092CFC4 /* MatProTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MatProTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		23F2B0A827041E430092CFC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		23F2B0AF27041E830092CFC4 /* ScoreManagerLogicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreManagerLogicTests.swift; sourceTree = "<group>"; };
+		23FBDFA5271251FA00860E27 /* LaunchLoading.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchLoading.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 		23F2B054270401990092CFC4 /* MatPro */ = {
 			isa = PBXGroup;
 			children = (
+				23FBDFA4271251E700860E27 /* App */,
 				23F2B09A27040E600092CFC4 /* Models */,
 				23F2B09727040DC70092CFC4 /* Controllers */,
 				23F2B069270402EE0092CFC4 /* Uitls */,
@@ -226,6 +229,14 @@
 			path = ScoreManager;
 			sourceTree = "<group>";
 		};
+		23FBDFA4271251E700860E27 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				23FBDFA5271251FA00860E27 /* LaunchLoading.storyboard */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -316,6 +327,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23FBDFA6271251FA00860E27 /* LaunchLoading.storyboard in Resources */,
 				23F2B0902704044B0092CFC4 /* ProximaNova-Sbold.otf in Resources */,
 				23F2B0912704044B0092CFC4 /* ProximaNova-Reg.otf in Resources */,
 				23F2B0622704019A0092CFC4 /* LaunchScreen.storyboard in Resources */,
