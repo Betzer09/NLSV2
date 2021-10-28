@@ -222,7 +222,6 @@
 		23F2B09727040DC70092CFC4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				23358EC3272B0D5700158884 /* SwiftyCam */,
 				23F2B09827040DDD0092CFC4 /* ScoreManager.swift */,
 			);
 			path = Controllers;
@@ -284,6 +283,7 @@
 		23FBDFAA27125A2900860E27 /* Recording */ = {
 			isa = PBXGroup;
 			children = (
+				23358EC3272B0D5700158884 /* SwiftyCam */,
 				23FBDFAB27125A4600860E27 /* Recording.storyboard */,
 				23FBDFAD27125A5300860E27 /* RecordingViewController.swift */,
 			);
