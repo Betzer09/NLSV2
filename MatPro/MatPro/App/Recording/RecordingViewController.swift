@@ -8,18 +8,16 @@
 import Foundation
 import UIKit
 
-class RecordingViewController: UIViewController {
+class RecordingViewController: SwiftyCamViewController {
     // MARK: - Outlets
-    @IBOutlet private var recordingView: UIView!
     
-    private let videoAPI = VideoPlayerAPI()
     
     // MARK: - Properties
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        videoAPI.configureViewForVideo(recordingView)
+        setupCamera()
     }
     
     // MARK: - View Overrides
@@ -29,6 +27,24 @@ class RecordingViewController: UIViewController {
     // MARK: - Public methods
     
     // MARK: - Private
+    private func setupCamera() {
+        cameraDelegate = self
+        defaultCamera = .rear
+        shouldPrompToAppSettings = true
+        shouldUseDeviceOrientation = true
+        allowAutoRotate = false
+        audioEnabled = false
+        flashMode = .off
+        doubleTapCameraSwitch = false
+    }
+}
+
+extension RecordingViewController: SwiftyCamViewControllerDelegate {
+    
+    func swiftyCamSessionDidStartRunning(_ swiftyCam: SwiftyCamViewController) {
+        
+    }
+    
 }
 
 // MARK: - Orientation

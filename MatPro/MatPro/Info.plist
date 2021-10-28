@@ -47,6 +47,10 @@
 	</dict>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>In order to record a video you we need camear access.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>In order to capture sound from your recordings we need microaphone access</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

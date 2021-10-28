@@ -16,24 +16,9 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PvJ-M8-tue">
-                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="PvJ-M8-tue" secondAttribute="bottom" id="4IP-Uh-gIF"/>
-                            <constraint firstItem="PvJ-M8-tue" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="5yr-xR-2o9"/>
-                            <constraint firstItem="PvJ-M8-tue" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="VTc-wX-Lxr"/>
-                            <constraint firstAttribute="trailing" secondItem="PvJ-M8-tue" secondAttribute="trailing" id="YIP-zY-zh4"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="recordingView" destination="PvJ-M8-tue" id="5GM-hO-Hwg"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
