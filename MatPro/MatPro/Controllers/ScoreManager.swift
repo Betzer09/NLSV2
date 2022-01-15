@@ -21,7 +21,6 @@ typealias Points = (homePoints: [Score], opponentPoints: [Score])?
  */
 class ScoreManager: NSObject, ScoreManagerLogic {
     
-    
     /// Calculates and configures the current available points for folk-style.
     /// - Returns: A tuple with home-points being at the first index, the opponent points at the second.
     func getFolkStylePointsBasedOn(lastScore: Score) -> Points  {

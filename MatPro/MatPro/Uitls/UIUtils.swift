@@ -44,6 +44,32 @@ class UIUtils {
             
         }
     }
+    
+    /**
+     Assists with locking orientation
+     
+     - parameter orientation: Desired orientation our app supports
+     */
+    
+    static func lockOrientation(_ orientation: UIInterfaceOrientationMask) {
+        if let delegate = UIApplication.shared.delegate as? AppDelegate {
+            delegate.supportedOrientation = orientation
+        }
+    }
+    
+    /**
+     Locks orientation and triggers rotate animation
+     
+     - parameter orientation: Desired orientation our app supports
+     - parameter andRotateTo: Orientation we want to rotate the device to
+    */
+    static func lockOrientation(_ orientation: UIInterfaceOrientationMask, andRotateTo rotateOrientation:UIInterfaceOrientation) {
+        UIView.setAnimationsEnabled(false)
+        self.lockOrientation(orientation)
+        UIDevice.current.setValue(rotateOrientation.rawValue, forKey: "orientation")
+        UIView.setAnimationsEnabled(true)
+        UINavigationController.attemptRotationToDeviceOrientation()
+    }
 }
 
 // MARK: - App Navigation

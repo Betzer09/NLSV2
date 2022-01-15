@@ -61,8 +61,6 @@ class VideoPlayerAPI: NSObject {
                 return "We were unable to set up the back camera."
             case .some(let error):
                 return error.localizedDescription
-            default:
-                return "[VideoAPI] has some issues configuring itself..."
             }
         }
     }

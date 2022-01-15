@@ -10,12 +10,4 @@ import XCTest
 
 class ScoreManagerLogicTests: XCTestCase {
 
-    override func setUp() {
-        
-    }
-    
-    override func tearDown() {
-        
-    }
-
 }
