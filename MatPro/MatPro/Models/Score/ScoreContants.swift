@@ -9,14 +9,14 @@ import Foundation
 
 struct ScoreConstants {
     static let reversal = "Reversal"
-    static let nearfallThree = "Near Fall"
+    static let nearfallThree = "Near Fall Three"
     static let onePoint = "One"
     static let twoPoints = "Two"
     static let fourPoints = "Four"
     static let fivePoints = "Five"
     static let escape = "Escape"
     static let takedown = "Takedown"
-    static let nearfallTwo = "Near Fall 2"
+    static let nearfallTwo = "Near Fall Two"
     static let techViolation = "Tech Violation"
     static let caution = "Caution"
     static let stalling = "Stalling"
@@ -55,25 +55,25 @@ struct WrestlingScores {
     
     
     /// Folk Style Neutral Scoretypes
-    static var folkStyleNeutralScoretypes: [Score] {
+    static var folkStyleNeutralScoretypes: [LocalScore] {
         return [WrestlingScores.AllScoreTypes.takedown] + warnings
     }
     
-    static var folkStyleTopScoreTypes: [Score] {
+    static var folkStyleTopScoreTypes: [LocalScore] {
         return [
             WrestlingScores.AllScoreTypes.nearfallTwo,
             WrestlingScores.AllScoreTypes.nearfallThree
         ] + warnings
     }
     
-    static  var folkStyleBottomScoretypes: [Score] {
+    static  var folkStyleBottomScoretypes: [LocalScore] {
         return [
             WrestlingScores.AllScoreTypes.reversal,
             WrestlingScores.AllScoreTypes.escape
         ] + warnings
     }
     
-    static  var warnings: [Score] {
+    static  var warnings: [LocalScore] {
         return [
             WrestlingScores.AllScoreTypes.stalling,
             WrestlingScores.AllScoreTypes.caution,
@@ -82,12 +82,12 @@ struct WrestlingScores {
     }
     
     // Freestyle greco
-    static  var freestyleGrecoWarnings: [Score] {
+    static  var freestyleGrecoWarnings: [LocalScore] {
         return [WrestlingScores.AllScoreTypes.caution]
     }
     
     /// Points available in freestyle and greco, theses don't change. All points are always readaly available.
-    static  var freestyleGrecoPoints: [Score] {
+    static  var freestyleGrecoPoints: [LocalScore] {
         return [
             WrestlingScores.AllScoreTypes.onePoint,
             WrestlingScores.AllScoreTypes.twoPoints,

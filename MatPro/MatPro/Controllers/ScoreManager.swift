@@ -13,7 +13,7 @@ protocol ScoreManagerLogic {
     func returnGrecoPoints(lastScore: Score) -> Points
 }
 
-typealias Points = (homePoints: [Score], opponentPoints: [Score])?
+typealias Points = (homePoints: [LocalScore], opponentPoints: [LocalScore])?
 
 
 /*
@@ -35,7 +35,7 @@ class ScoreManager: NSObject, ScoreManagerLogic {
                 availablePoints = (WrestlingScores.folkStyleTopScoreTypes,
                                    WrestlingScores.folkStyleBottomScoretypes)
             } else {
-                // Opponent scored and took top posotion
+                // Opponent scored and took top position
                 availablePoints = (WrestlingScores.folkStyleBottomScoretypes,
                                    WrestlingScores.folkStyleTopScoreTypes)
             }
