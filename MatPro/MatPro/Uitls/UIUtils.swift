@@ -57,17 +57,12 @@ class UIUtils {
         }
     }
     
-    /**
-     Locks orientation and triggers rotate animation
-     
-     - parameter orientation: Desired orientation our app supports
-     - parameter andRotateTo: Orientation we want to rotate the device to
-    */
+    /// Added method to adjust lock and rotate to the desired orientation
     static func lockOrientation(_ orientation: UIInterfaceOrientationMask, andRotateTo rotateOrientation:UIInterfaceOrientation) {
-        UIView.setAnimationsEnabled(false)
+        
         self.lockOrientation(orientation)
+        
         UIDevice.current.setValue(rotateOrientation.rawValue, forKey: "orientation")
-        UIView.setAnimationsEnabled(true)
         UINavigationController.attemptRotationToDeviceOrientation()
     }
 }

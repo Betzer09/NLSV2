@@ -12,8 +12,9 @@ class MainTabViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        UIUtils.lockOrientation(.portrait, andRotateTo: .portrait)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
             self.startTapped(self)
         })
     }

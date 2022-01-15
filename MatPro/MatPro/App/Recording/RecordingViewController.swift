@@ -18,8 +18,7 @@ class RecordingViewController: SwiftyCamViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCamera()
-        lockRotation()
-        
+//        UIUtils.lockOrientation(.landscapeLeft, andRotateTo: .landscapeLeft)
     }
 
     
@@ -31,12 +30,6 @@ class RecordingViewController: SwiftyCamViewController {
     
     // MARK: - Private
     
-    private func lockRotation() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
-            UIUtils.lockOrientation(.landscape, andRotateTo: .landscapeRight)
-            self.allowAutoRotate = false
-        })
-    }
     
     private func setupCamera() {
         cameraDelegate = self
@@ -63,21 +56,5 @@ extension RecordingViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
-    
-    override var shouldAutorotate: Bool {
-        setOrientationToLandscape()
-        return false
-    }
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return .landscape
-    }
-    override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
-        return .landscapeRight
-        
-    }
-    
-    private func setOrientationToLandscape() {
-           UIDevice.current.setValue(UIInterfaceOrientation.landscapeRight.rawValue, forKey: "orientation")
-       }
 }
 
