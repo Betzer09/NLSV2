@@ -12,6 +12,7 @@
 		23358ECB272B0D9E00158884 /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23358EC6272B0D9E00158884 /* Orientation.swift */; };
 		23358ECC272B0D9E00158884 /* SwiftyCamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23358EC7272B0D9E00158884 /* SwiftyCamViewController.swift */; };
 		23358ECD272B0D9E00158884 /* SwiftyCamViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23358EC8272B0D9E00158884 /* SwiftyCamViewControllerDelegate.swift */; };
+		233954FE2793567100002913 /* DoubleLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233954FD2793567100002913 /* DoubleLinkedList.swift */; };
 		23F2B056270401990092CFC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F2B055270401990092CFC4 /* AppDelegate.swift */; };
 		23F2B058270401990092CFC4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F2B057270401990092CFC4 /* SceneDelegate.swift */; };
 		23F2B05D270401990092CFC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23F2B05B270401990092CFC4 /* Main.storyboard */; };
@@ -65,6 +66,7 @@
 		23358EC6272B0D9E00158884 /* Orientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Orientation.swift; sourceTree = "<group>"; };
 		23358EC7272B0D9E00158884 /* SwiftyCamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyCamViewController.swift; sourceTree = "<group>"; };
 		23358EC8272B0D9E00158884 /* SwiftyCamViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyCamViewControllerDelegate.swift; sourceTree = "<group>"; };
+		233954FD2793567100002913 /* DoubleLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleLinkedList.swift; sourceTree = "<group>"; };
 		23F2B052270401990092CFC4 /* MatPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MatPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23F2B055270401990092CFC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		23F2B057270401990092CFC4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -136,6 +138,14 @@
 			path = SwiftyCam;
 			sourceTree = "<group>";
 		};
+		233954FC2793566500002913 /* DataStructures */ = {
+			isa = PBXGroup;
+			children = (
+				233954FD2793567100002913 /* DoubleLinkedList.swift */,
+			);
+			path = DataStructures;
+			sourceTree = "<group>";
+		};
 		23F2B049270401990092CFC4 = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +167,7 @@
 		23F2B054270401990092CFC4 /* MatPro */ = {
 			isa = PBXGroup;
 			children = (
+				233954FC2793566500002913 /* DataStructures */,
 				23FBDFAF27125A9600860E27 /* Views */,
 				23FBDFA4271251E700860E27 /* App */,
 				23F2B09A27040E600092CFC4 /* Models */,
@@ -433,6 +444,7 @@
 				23F2B07D2704031A0092CFC4 /* UIColor+Ext.swift in Sources */,
 				23F2B0812704031A0092CFC4 /* UIView+Ext.swift in Sources */,
 				23F2B079270403150092CFC4 /* UIUtils.swift in Sources */,
+				233954FE2793567100002913 /* DoubleLinkedList.swift in Sources */,
 				23F2B056270401990092CFC4 /* AppDelegate.swift in Sources */,
 				23F2B07F2704031A0092CFC4 /* UIImageView+Ext.swift in Sources */,
 				23358ECD272B0D9E00158884 /* SwiftyCamViewControllerDelegate.swift in Sources */,
