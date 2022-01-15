@@ -21,9 +21,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>In order to record a video you we need camear access.</string>
+	<string>In order to record a video you we need camera access.</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>In order to capture sound from your recordings we need microaphone access</string>
+	<string>In order to capture sound from your recordings we need microphone access</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>ProximaNova-Reg.otf</string>
