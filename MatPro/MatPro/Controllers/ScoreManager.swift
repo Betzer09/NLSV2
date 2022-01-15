@@ -8,7 +8,7 @@
 import Foundation
 
 protocol ScoreManagerLogic {
-    func getFolkStylePointsBasedOn(lastScore: Score) -> Points
+    func getFolkStylePointsBasedOn(lastScore: Score, isCaution: Bool) -> Points
     func returnFreestylePoints(lastScore: Score) -> Points
     func returnGrecoPoints(lastScore: Score) -> Points
 }
@@ -23,10 +23,14 @@ class ScoreManager: NSObject, ScoreManagerLogic {
     
     /// Calculates and configures the current available points for folk-style.
     /// - Returns: A tuple with home-points being at the first index, the opponent points at the second.
-    func getFolkStylePointsBasedOn(lastScore: Score) -> Points  {
+    func getFolkStylePointsBasedOn(lastScore: Score, isCaution: Bool = false) -> Points  {
         
         var availablePoints: Points = (WrestlingScores.folkStyleNeutralScoretypes,
                                        WrestlingScores.folkStyleNeutralScoretypes)
+        
+        guard !isCaution else {
+            return nil
+        }
         
         switch lastScore.position {
         case .neutral:
@@ -76,6 +80,7 @@ class ScoreManager: NSObject, ScoreManagerLogic {
             }
         default:
             print("A warning of some kind was given, points don't change.")
+            assertionFailure("Wasn't expecting this, \(lastScore)")
             return nil
         }
         
