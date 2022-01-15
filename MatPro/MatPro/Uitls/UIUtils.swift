@@ -14,24 +14,6 @@ import UIKit
  custom alerts, xib presentations, etc
  */
 class UIUtils {
-    /**
-     Presents a simple alert
-     
-     - parameter vc: The view controller you want to present on
-     - parameter title: Optional: The title of the alert, if you pass in nil the title will be set to 'Error'
-     - parameter message: The message that should display in the alert
-     - parameter onDismiss: An optional code block that runs after the user has presses the okay action
-     */
-    static func presentSimpleAlert(vc: UIViewController, title: String?, message: String?, okayTitle: String? = "OK", onDismiss: (() -> ())? = nil) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        
-        let okayAction = UIAlertAction(title: okayTitle, style: .default) { (_) in
-            onDismiss?()
-        }
-        
-        alert.addAction(okayAction)
-        vc.present(alert, animated: true)
-    }
     
     /// Presents the main section of the app
     static func presentMainTab() {

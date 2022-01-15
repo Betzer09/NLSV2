@@ -9,13 +9,13 @@ import Foundation
 import UIKit
 import AVFoundation
 
-class RecordingViewController: UIViewController {
+class RecordingViewController: BaseViewController {
     // MARK: - Outlets
     
     // MARK: - Properties
-    var session: AVCaptureSession?
-    let output = AVCapturePhotoOutput()
-    let previewLayer = AVCaptureVideoPreviewLayer()
+    private var session: AVCaptureSession?
+    private let output = AVCapturePhotoOutput()
+    private let previewLayer = AVCaptureVideoPreviewLayer()
     
     private let shutterButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
@@ -72,14 +72,31 @@ class RecordingViewController: UIViewController {
             }
         case .restricted:
             // show alert
-            break
+            navigateUsersToSettings()
         case .denied:
             // show alert
-            break
+            navigateUsersToSettings()
         case .authorized:
             setupCamera()
         @unknown default:
             break
+        }
+    }
+    
+    private func navigateUsersToSettings() {
+        presentSimpleAlert(title: "Camera Permissions Restricted",
+                           message: "Go to settings and enable camera permissions to record content.",
+                           okayTitle: "Go to Settings") {
+            
+            guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+                return
+            }
+            
+            if UIApplication.shared.canOpenURL(settingsUrl) {
+                UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
+                    print("Settings opened: \(success)") // Prints true
+                })
+            }
         }
     }
     
@@ -98,7 +115,6 @@ class RecordingViewController: UIViewController {
                 }
                 
                 previewLayer.videoGravity = .resizeAspectFill
-//                previewLayer.connection?.videoOrientation = .landscapeLeft
                 previewLayer.session = session
                 
                 session.startRunning()
@@ -125,21 +141,3 @@ extension RecordingViewController {
 }
 
 
-extension UIInterfaceOrientation {
-
-  public var videoOrientation: AVCaptureVideoOrientation {
-    switch self {
-    case .portrait:
-      return AVCaptureVideoOrientation.portrait
-    case .landscapeRight:
-      return AVCaptureVideoOrientation.landscapeRight
-    case .landscapeLeft:
-      return AVCaptureVideoOrientation.landscapeLeft
-    case .portraitUpsideDown:
-      return AVCaptureVideoOrientation.portraitUpsideDown
-    default:
-      return AVCaptureVideoOrientation.portrait
-    }
-  }
-
-}
