@@ -8,12 +8,12 @@
 import Foundation
 
 protocol ScoreManagerLogic {
-    func getFolkStylePointsBasedOn(lastScore: Score, isCaution: Bool) -> Points
-    func returnFreestylePoints(lastScore: Score) -> Points
-    func returnGrecoPoints(lastScore: Score) -> Points
+    func getFolkStylePointsBasedOn(lastScore: Score, isCaution: Bool) -> Scores
+    func returnFreestylePoints(lastScore: Score) -> Scores
+    func returnGrecoPoints(lastScore: Score) -> Scores
 }
 
-typealias Points = (homePoints: [LocalScore], opponentPoints: [LocalScore])?
+typealias Scores = (homePoints: [LocalScore], opponentPoints: [LocalScore])?
 
 
 /*
@@ -23,9 +23,9 @@ class ScoreManager: NSObject, ScoreManagerLogic {
     
     /// Calculates and configures the current available points for folk-style.
     /// - Returns: A tuple with home-points being at the first index, the opponent points at the second.
-    func getFolkStylePointsBasedOn(lastScore: Score, isCaution: Bool = false) -> Points  {
+    func getFolkStylePointsBasedOn(lastScore: Score, isCaution: Bool = false) -> Scores  {
         
-        var availablePoints: Points = (WrestlingScores.folkStyleNeutralScoretypes,
+        var availablePoints: Scores = (WrestlingScores.folkStyleNeutralScoretypes,
                                        WrestlingScores.folkStyleNeutralScoretypes)
         
         guard !isCaution else {
@@ -88,13 +88,13 @@ class ScoreManager: NSObject, ScoreManagerLogic {
         return availablePoints
     }
     
-    /// Calulates and configures the current avilable points for fokstlye.
-    /// - Returns: A tuple with homepoints being at the first index, the opponent points are the second index.
-    func returnFreestylePoints(lastScore: Score) -> Points {
+    /// Calculates and configures the current available points for folk style.
+    /// - Returns: A tuple with home points being at the first index, the opponent points are the second index.
+    func returnFreestylePoints(lastScore: Score) -> Scores {
         return (WrestlingScores.freestyleGrecoPoints, WrestlingScores.freestyleGrecoPoints)
     }
 
-    func returnGrecoPoints(lastScore: Score) -> Points {
+    func returnGrecoPoints(lastScore: Score) -> Scores {
         return(WrestlingScores.folkStyleTopScoreTypes, WrestlingScores.folkStyleBottomScoretypes)
     }
 }
