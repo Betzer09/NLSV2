@@ -18,7 +18,7 @@ class RecordingViewController: BaseViewController {
     private let videoOutput = AVCaptureMovieFileOutput()
     private let previewLayer = AVCaptureVideoPreviewLayer()
     
-    var isRecordingInProgress: Bool = false
+    private var isRecordingInProgress: Bool = false
     
     private let shutterButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 60, height: 60))
@@ -126,6 +126,7 @@ class RecordingViewController: BaseViewController {
 
 }
 
+// MARK: - AVCaptureFileOutputRecordingDelegate
 extension RecordingViewController: AVCaptureFileOutputRecordingDelegate {
     func fileOutput(_ output: AVCaptureFileOutput, didFinishRecordingTo outputFileURL: URL, from connections: [AVCaptureConnection], error: Error?) {
         
@@ -163,7 +164,7 @@ extension RecordingViewController: AVCaptureFileOutputRecordingDelegate {
         isRecordingInProgress.toggle()
     }
     
-    func startVideoCapture() {
+    private func startVideoCapture() {
         print("[RecordingViewController]: Starting to record")
         shutterButton.layer.borderColor = UIColor.red.cgColor
         guard let captureSession = captureSession, captureSession.isRunning else {
@@ -179,7 +180,7 @@ extension RecordingViewController: AVCaptureFileOutputRecordingDelegate {
         
     }
     
-    func stopVideoCapture() {
+    private func stopVideoCapture() {
         print("[RecordingViewController]: stopping recording")
         shutterButton.layer.borderColor = UIColor.white.cgColor
         guard let captureSession = self.captureSession, captureSession.isRunning else {

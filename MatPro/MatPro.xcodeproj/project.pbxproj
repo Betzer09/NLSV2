@@ -10,6 +10,7 @@
 		233954FE2793567100002913 /* DoubleLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233954FD2793567100002913 /* DoubleLinkedList.swift */; };
 		233955002793660400002913 /* UIInterfaceOrientation+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233954FF2793660400002913 /* UIInterfaceOrientation+Ext.swift */; };
 		233955052793667100002913 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233955042793667100002913 /* BaseViewController.swift */; };
+		233955072793B3EB00002913 /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233955062793B3EB00002913 /* MatchViewController.swift */; };
 		23F2B056270401990092CFC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F2B055270401990092CFC4 /* AppDelegate.swift */; };
 		23F2B058270401990092CFC4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F2B057270401990092CFC4 /* SceneDelegate.swift */; };
 		23F2B05D270401990092CFC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23F2B05B270401990092CFC4 /* Main.storyboard */; };
@@ -41,9 +42,8 @@
 		23F2B0B027041E830092CFC4 /* ScoreManagerLogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F2B0AF27041E830092CFC4 /* ScoreManagerLogicTests.swift */; };
 		23FBDFA6271251FA00860E27 /* LaunchLoading.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23FBDFA5271251FA00860E27 /* LaunchLoading.storyboard */; };
 		23FBDFA92712574B00860E27 /* LaunchLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FBDFA82712574B00860E27 /* LaunchLoadingViewController.swift */; };
-		23FBDFAC27125A4600860E27 /* Recording.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23FBDFAB27125A4600860E27 /* Recording.storyboard */; };
+		23FBDFAC27125A4600860E27 /* Match.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23FBDFAB27125A4600860E27 /* Match.storyboard */; };
 		23FBDFAE27125A5300860E27 /* RecordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FBDFAD27125A5300860E27 /* RecordingViewController.swift */; };
-		23FBDFB227125AAB00860E27 /* VideoPlayerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FBDFB127125AAB00860E27 /* VideoPlayerAPI.swift */; };
 		23FBDFB527125F2900860E27 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FBDFB427125F2900860E27 /* MainTabViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +61,7 @@
 		233954FD2793567100002913 /* DoubleLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleLinkedList.swift; sourceTree = "<group>"; };
 		233954FF2793660400002913 /* UIInterfaceOrientation+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIInterfaceOrientation+Ext.swift"; sourceTree = "<group>"; };
 		233955042793667100002913 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		233955062793B3EB00002913 /* MatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
 		23F2B052270401990092CFC4 /* MatPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MatPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23F2B055270401990092CFC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		23F2B057270401990092CFC4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,9 +94,8 @@
 		23F2B0AF27041E830092CFC4 /* ScoreManagerLogicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreManagerLogicTests.swift; sourceTree = "<group>"; };
 		23FBDFA5271251FA00860E27 /* LaunchLoading.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchLoading.storyboard; sourceTree = "<group>"; };
 		23FBDFA82712574B00860E27 /* LaunchLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchLoadingViewController.swift; sourceTree = "<group>"; };
-		23FBDFAB27125A4600860E27 /* Recording.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Recording.storyboard; sourceTree = "<group>"; };
+		23FBDFAB27125A4600860E27 /* Match.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Match.storyboard; sourceTree = "<group>"; };
 		23FBDFAD27125A5300860E27 /* RecordingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingViewController.swift; sourceTree = "<group>"; };
-		23FBDFB127125AAB00860E27 /* VideoPlayerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerAPI.swift; sourceTree = "<group>"; };
 		23FBDFB427125F2900860E27 /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -287,7 +287,8 @@
 		23FBDFAA27125A2900860E27 /* Recording */ = {
 			isa = PBXGroup;
 			children = (
-				23FBDFAB27125A4600860E27 /* Recording.storyboard */,
+				23FBDFAB27125A4600860E27 /* Match.storyboard */,
+				233955062793B3EB00002913 /* MatchViewController.swift */,
 			);
 			path = Recording;
 			sourceTree = "<group>";
@@ -295,17 +296,8 @@
 		23FBDFAF27125A9600860E27 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				23FBDFB027125A9F00860E27 /* VideoPlayer */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		23FBDFB027125A9F00860E27 /* VideoPlayer */ = {
-			isa = PBXGroup;
-			children = (
-				23FBDFB127125AAB00860E27 /* VideoPlayerAPI.swift */,
-			);
-			path = VideoPlayer;
 			sourceTree = "<group>";
 		};
 		23FBDFB327125F1D00860E27 /* MainTab */ = {
@@ -407,7 +399,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23FBDFAC27125A4600860E27 /* Recording.storyboard in Resources */,
+				23FBDFAC27125A4600860E27 /* Match.storyboard in Resources */,
 				23FBDFA6271251FA00860E27 /* LaunchLoading.storyboard in Resources */,
 				23F2B0902704044B0092CFC4 /* ProximaNova-Sbold.otf in Resources */,
 				23F2B0912704044B0092CFC4 /* ProximaNova-Reg.otf in Resources */,
@@ -438,7 +430,6 @@
 				233954FE2793567100002913 /* DoubleLinkedList.swift in Sources */,
 				23F2B056270401990092CFC4 /* AppDelegate.swift in Sources */,
 				23F2B07F2704031A0092CFC4 /* UIImageView+Ext.swift in Sources */,
-				23FBDFB227125AAB00860E27 /* VideoPlayerAPI.swift in Sources */,
 				23F2B0802704031A0092CFC4 /* UINavigationItem+Ext.swift in Sources */,
 				23FBDFB527125F2900860E27 /* MainTabViewController.swift in Sources */,
 				23F2B0852704031A0092CFC4 /* Data+Ext.swift in Sources */,
@@ -447,6 +438,7 @@
 				23F2B0862704031A0092CFC4 /* UIImage+Ext.swift in Sources */,
 				233955052793667100002913 /* BaseViewController.swift in Sources */,
 				23FBDFAE27125A5300860E27 /* RecordingViewController.swift in Sources */,
+				233955072793B3EB00002913 /* MatchViewController.swift in Sources */,
 				23F2B09F27041AF60092CFC4 /* ScoreContants.swift in Sources */,
 				23F2B09927040DDD0092CFC4 /* ScoreManager.swift in Sources */,
 				23FBDFA92712574B00860E27 /* LaunchLoadingViewController.swift in Sources */,

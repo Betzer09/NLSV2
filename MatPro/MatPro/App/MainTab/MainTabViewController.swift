@@ -21,7 +21,7 @@ class MainTabViewController: UIViewController {
     
     
     @IBAction private func startTapped (_ sender: Any) {
-        let vc = Storyboards.recording.initialize()
+        let vc = Storyboards.match.initialize()
         navigationController?.pushViewController(vc, animated: true)
     }
 }
