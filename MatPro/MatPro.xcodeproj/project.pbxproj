@@ -11,6 +11,8 @@
 		233955002793660400002913 /* UIInterfaceOrientation+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233954FF2793660400002913 /* UIInterfaceOrientation+Ext.swift */; };
 		233955052793667100002913 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233955042793667100002913 /* BaseViewController.swift */; };
 		233955072793B3EB00002913 /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233955062793B3EB00002913 /* MatchViewController.swift */; };
+		2339550A2793B5D600002913 /* ScoreCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233955092793B5D600002913 /* ScoreCollectionView.swift */; };
+		2339550D2793B84D00002913 /* ScoresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2339550C2793B84D00002913 /* ScoresView.swift */; };
 		23F2B056270401990092CFC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F2B055270401990092CFC4 /* AppDelegate.swift */; };
 		23F2B058270401990092CFC4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F2B057270401990092CFC4 /* SceneDelegate.swift */; };
 		23F2B05D270401990092CFC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23F2B05B270401990092CFC4 /* Main.storyboard */; };
@@ -62,6 +64,8 @@
 		233954FF2793660400002913 /* UIInterfaceOrientation+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIInterfaceOrientation+Ext.swift"; sourceTree = "<group>"; };
 		233955042793667100002913 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		233955062793B3EB00002913 /* MatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
+		233955092793B5D600002913 /* ScoreCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCollectionView.swift; sourceTree = "<group>"; };
+		2339550C2793B84D00002913 /* ScoresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresView.swift; sourceTree = "<group>"; };
 		23F2B052270401990092CFC4 /* MatPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MatPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23F2B055270401990092CFC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		23F2B057270401990092CFC4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -135,6 +139,22 @@
 				233955042793667100002913 /* BaseViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		233955082793B5B400002913 /* ScoreCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				233955092793B5D600002913 /* ScoreCollectionView.swift */,
+			);
+			path = ScoreCollectionView;
+			sourceTree = "<group>";
+		};
+		2339550B2793B83900002913 /* ScoresView */ = {
+			isa = PBXGroup;
+			children = (
+				2339550C2793B84D00002913 /* ScoresView.swift */,
+			);
+			path = ScoresView;
 			sourceTree = "<group>";
 		};
 		23F2B049270401990092CFC4 = {
@@ -296,6 +316,8 @@
 		23FBDFAF27125A9600860E27 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2339550B2793B83900002913 /* ScoresView */,
+				233955082793B5B400002913 /* ScoreCollectionView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -432,6 +454,7 @@
 				23F2B07F2704031A0092CFC4 /* UIImageView+Ext.swift in Sources */,
 				23F2B0802704031A0092CFC4 /* UINavigationItem+Ext.swift in Sources */,
 				23FBDFB527125F2900860E27 /* MainTabViewController.swift in Sources */,
+				2339550A2793B5D600002913 /* ScoreCollectionView.swift in Sources */,
 				23F2B0852704031A0092CFC4 /* Data+Ext.swift in Sources */,
 				23F2B0832704031A0092CFC4 /* UITapGestureRecognizer+Ext.swift in Sources */,
 				23F2B0822704031A0092CFC4 /* String+Ext.swift in Sources */,
@@ -444,6 +467,7 @@
 				23FBDFA92712574B00860E27 /* LaunchLoadingViewController.swift in Sources */,
 				23F2B07C2704031A0092CFC4 /* Double+Ext.swift in Sources */,
 				233955002793660400002913 /* UIInterfaceOrientation+Ext.swift in Sources */,
+				2339550D2793B84D00002913 /* ScoresView.swift in Sources */,
 				23F2B07E2704031A0092CFC4 /* UIFont+Ext.swift in Sources */,
 				23F2B0842704031A0092CFC4 /* DateFormatter+Ext.swift in Sources */,
 				23F2B058270401990092CFC4 /* SceneDelegate.swift in Sources */,
