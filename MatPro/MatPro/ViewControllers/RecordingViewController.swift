@@ -18,6 +18,8 @@ class RecordingViewController: BaseViewController {
     private let videoOutput = AVCaptureMovieFileOutput()
     private let previewLayer = AVCaptureVideoPreviewLayer()
     
+    var isRecordingInProgress: Bool = false
+    
     private let shutterButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 60, height: 60))
         button.layer.cornerRadius = 30
@@ -27,13 +29,13 @@ class RecordingViewController: BaseViewController {
     }()
     
     
-    
     // MARK: - View Life Cycle
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
         previewLayer.frame = view.bounds
         shutterButton.center = CGPoint(x: view.frame.size.width/2, y: view.frame.size.height - 80)
+        
         
         if let previewLayerConnection = previewLayer.connection,
             previewLayerConnection.isVideoOrientationSupported {
@@ -136,29 +138,34 @@ extension RecordingViewController: AVCaptureFileOutputRecordingDelegate {
             PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: outputFileURL)
         }) { saved, error in
             if saved {
-                let alertController = UIAlertController(title: "Your video was successfully saved", message: nil, preferredStyle: .alert)
-                let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-                alertController.addAction(defaultAction)
-                self.present(alertController, animated: true, completion: nil)
+                DispatchQueue.main.async {
+                    let alertController = UIAlertController(title: "Your video was successfully saved", message: nil, preferredStyle: .alert)
+                    let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                    alertController.addAction(defaultAction)
+                    self.present(alertController, animated: true, completion: nil)
+                }
             }
         }
         
     }
     
     @objc func toggleVideoCapture() {
-        guard let captureSession = captureSession else {
-            print("[RecordingViewController]: No capture session was found.")
-            return
-        }
-        
-        if captureSession.isRunning {
-            stopRecording()
+        configureVideoCapture()
+    }
+    
+    private func configureVideoCapture() {
+        if isRecordingInProgress {
+            stopVideoCapture()
         } else {
             startVideoCapture()
         }
+        
+        isRecordingInProgress.toggle()
     }
     
     func startVideoCapture() {
+        print("[RecordingViewController]: Starting to record")
+        shutterButton.layer.borderColor = UIColor.red.cgColor
         guard let captureSession = captureSession, captureSession.isRunning else {
             print("[RecordingViewController]: No capture session was found and recording could not be started.")
             return
@@ -166,16 +173,15 @@ extension RecordingViewController: AVCaptureFileOutputRecordingDelegate {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         let fileUrl = paths[0].appendingPathComponent("output.mp4")
         
-        do {
-            try FileManager.default.removeItem(at: fileUrl)
-            videoOutput.startRecording(to: fileUrl, recordingDelegate: self)
-        } catch (let error) {
-            print("[RecordingViewController]: failed to remove item from file manager: \(error)")
-        }
+        // Remove previous video if it exists
+        try? FileManager.default.removeItem(at: fileUrl)
+        videoOutput.startRecording(to: fileUrl, recordingDelegate: self)
         
     }
     
-    func stopRecording() {
+    func stopVideoCapture() {
+        print("[RecordingViewController]: stopping recording")
+        shutterButton.layer.borderColor = UIColor.white.cgColor
         guard let captureSession = self.captureSession, captureSession.isRunning else {
             print("[RecordingViewController]: No capture session was found and recording could not be stopped.")
             return
