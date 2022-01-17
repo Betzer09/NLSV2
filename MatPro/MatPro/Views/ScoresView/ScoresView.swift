@@ -32,6 +32,7 @@ class ScoreView: UIView {
         super.init(frame: .zero)
         
         setupUI()
+        collapseView()
     }
     
     
@@ -73,16 +74,20 @@ class ScoreView: UIView {
         pointsCollectionView.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor).isActive = true
     }
     
-    public final func openView() {
+    private final func openView() {
         closedHeightConstraint.isActive = false
         openHeightConstraint.isActive = true
         pointsCollectionView.isHidden = false
     }
     
-    public final func collapseView() {
+    private final func collapseView() {
         closedHeightConstraint.isActive = true
         openHeightConstraint.isActive = false
         pointsCollectionView.isHidden = true
+    }
+    
+    @objc private func toggleOpenAndCollapse() {
+        closedHeightConstraint.isActive ? openView() : collapseView()
     }
     
     
@@ -92,6 +97,7 @@ class ScoreView: UIView {
         let button = UIButton()
         button.setImage(UIImage(named: "icon-plus"), for: .normal)
         button.backgroundColor = .white
+        button.addTarget(self, action: #selector(toggleOpenAndCollapse), for: .touchUpInside)
         return button
     }()
     
@@ -118,7 +124,8 @@ class ScoreView: UIView {
     }()
 }
 
-extension ScoreView: UICollectionViewDataSource, UICollectionViewDelegate {
+// MARK: - UICollectionViewDataSource & UICollectionViewDelegate
+extension ScoreView: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return availableScores.count
     }
@@ -129,4 +136,10 @@ extension ScoreView: UICollectionViewDataSource, UICollectionViewDelegate {
         cell.setupUI(score: availableScores[indexPath.row])
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
+    }
+    
+    
 }

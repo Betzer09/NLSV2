@@ -35,15 +35,6 @@ final class MatchViewController: RecordingViewController {
         homeScoreView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.6).isActive = true
         homeScoreView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
         homeScoreView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
-        homeScoreView.collapseView()
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-            self.homeScoreView.openView()
-        }
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
-            self.homeScoreView.collapseView()
-        }
     }
     
 }
