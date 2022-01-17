@@ -15,7 +15,7 @@ final class MatchViewController: RecordingViewController {
     // Right Score Button
     
     private lazy var homeScoreView: ScoreView = {
-        let view = ScoreView(availableScores: WrestlingScores.folkStyleNeutralScoretypes)
+        let view = ScoreView(availableScores: WrestlingScores.folkStyleNeutralScoretypes + WrestlingScores.folkStyleNeutralScoretypes )
         return view
     }()
     
@@ -32,15 +32,15 @@ final class MatchViewController: RecordingViewController {
         view.addSubview(homeScoreView)
         homeScoreView.translatesAutoresizingMaskIntoConstraints = false
         homeScoreView.widthAnchor.constraint(equalToConstant: 44).isActive = true
-        homeScoreView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.7).isActive = true
+        homeScoreView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.6).isActive = true
         homeScoreView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
         homeScoreView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
         homeScoreView.collapseView()
-        
+
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
             self.homeScoreView.openView()
         }
-        
+
         DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
             self.homeScoreView.collapseView()
         }
