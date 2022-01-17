@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 final class MatchViewController: RecordingViewController {
     // Right Score Collection View
@@ -13,23 +14,36 @@ final class MatchViewController: RecordingViewController {
     // Left Score Button
     // Right Score Button
     
-    private lazy var scoreView: ScoreView = {
+    private lazy var homeScoreView: ScoreView = {
         let view = ScoreView(availableScores: WrestlingScores.folkStyleNeutralScoretypes)
-        view.backgroundColor = .white.withAlphaComponent(0.2)
         return view
     }()
     
-    // MARK: - View Life Cycle
+    // MARK: - View Life Cycle 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.addSubview(scoreView)
-        scoreView.translatesAutoresizingMaskIntoConstraints = false
-        scoreView.widthAnchor.constraint(equalToConstant: 44).isActive = true
-        scoreView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.7).isActive = true
-        scoreView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
-        scoreView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
-        scoreView.layer.cornerRadius = 22
+        setupUI()
+    }
+    
+    private func setupUI() {
+        
+        // Home Score View
+        view.addSubview(homeScoreView)
+        homeScoreView.translatesAutoresizingMaskIntoConstraints = false
+        homeScoreView.widthAnchor.constraint(equalToConstant: 44).isActive = true
+        homeScoreView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.7).isActive = true
+        homeScoreView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
+        homeScoreView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
+        homeScoreView.collapseView()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            self.homeScoreView.openView()
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+            self.homeScoreView.collapseView()
+        }
     }
     
 }
