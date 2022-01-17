@@ -11,7 +11,6 @@ import AVFoundation
 import Photos
 
 class RecordingViewController: BaseViewController {
-    // MARK: - Outlets
     
     // MARK: - Properties
     private var captureSession: AVCaptureSession?
@@ -21,10 +20,9 @@ class RecordingViewController: BaseViewController {
     private var isRecordingInProgress: Bool = false
     
     private let shutterButton: UIButton = {
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 60, height: 60))
-        button.layer.cornerRadius = 30
-        button.layer.borderWidth = 10
-        button.layer.borderColor = UIColor.white.cgColor
+        let button = UIButton(frame: .zero)
+        button.backgroundColor = .clear
+        button.setImage(UIImage(named: "icon-record"), for: .normal)
         return button
     }()
     
@@ -34,8 +32,6 @@ class RecordingViewController: BaseViewController {
         super.viewDidLayoutSubviews()
         
         previewLayer.frame = view.bounds
-        shutterButton.center = CGPoint(x: view.frame.size.width/2, y: view.frame.size.height - 80)
-        
         
         if let previewLayerConnection = previewLayer.connection,
             previewLayerConnection.isVideoOrientationSupported {
@@ -46,10 +42,19 @@ class RecordingViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.layer.addSublayer(previewLayer)
-        view.addSubview(shutterButton)
         UIUtils.lockOrientation(.landscapeRight, andRotateTo: .landscapeRight)
+        configureShutterButton()
         shutterButton.addTarget(self, action: #selector(toggleVideoCapture), for: .touchUpInside)
         checkForCameraPermissions()
+    }
+    
+    private func configureShutterButton() {
+        view.addSubview(shutterButton)
+        shutterButton.translatesAutoresizingMaskIntoConstraints = false
+        shutterButton.widthAnchor.constraint(equalToConstant: 44).isActive = true
+        shutterButton.heightAnchor.constraint(equalToConstant: 44).isActive = true
+        shutterButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        shutterButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
     }
     
     private func updatePreviewLayer(layer: AVCaptureConnection, orientation: AVCaptureVideoOrientation) {
