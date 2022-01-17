@@ -25,10 +25,11 @@ final class MatchViewController: RecordingViewController {
         
         view.addSubview(scoreView)
         scoreView.translatesAutoresizingMaskIntoConstraints = false
-        scoreView.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        scoreView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        scoreView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        scoreView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        scoreView.widthAnchor.constraint(equalToConstant: 44).isActive = true
+        scoreView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.6).isActive = true
+        scoreView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
+        scoreView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
+        scoreView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
     }
     
 }
