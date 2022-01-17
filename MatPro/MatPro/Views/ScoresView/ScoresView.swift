@@ -78,17 +78,21 @@ class ScoreView: UIView {
         closedHeightConstraint.isActive = false
         openHeightConstraint.isActive = true
         pointsCollectionView.isHidden = false
+        plusButton.setImage(UIImage(named: "icon-dismiss"), for: .normal)
     }
     
     private final func collapseView() {
         closedHeightConstraint.isActive = true
         openHeightConstraint.isActive = false
         pointsCollectionView.isHidden = true
+        plusButton.setImage(UIImage(named: "icon-plus"), for: .normal)
     }
     
     @objc private func toggleOpenAndCollapse() {
         closedHeightConstraint.isActive ? openView() : collapseView()
     }
+    
+    
     
     
     // MARK: - UI
