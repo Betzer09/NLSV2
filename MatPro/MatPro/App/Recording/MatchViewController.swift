@@ -42,13 +42,13 @@ final class MatchViewController: RecordingViewController {
     }
     
     // MARK: - UI
-    private lazy var homeScoreView: ScoreView = {
-        let view = ScoreView(availableScores: WrestlingScores.folkStyleNeutralScoretypes + WrestlingScores.folkStyleNeutralScoretypes )
+    private lazy var homeScoreView: PointsView = {
+        let view = PointsView(availableScores: WrestlingScores.folkStyleNeutralScoretypes + WrestlingScores.folkStyleNeutralScoretypes )
         return view
     }()
     
-    private lazy var awayScoreView: ScoreView = {
-        let view = ScoreView(availableScores: WrestlingScores.folkStyleNeutralScoretypes + WrestlingScores.folkStyleNeutralScoretypes)
+    private lazy var awayScoreView: PointsView = {
+        let view = PointsView(availableScores: WrestlingScores.folkStyleNeutralScoretypes + WrestlingScores.folkStyleNeutralScoretypes)
         return view
     }()
     

@@ -8,27 +8,21 @@
 import Foundation
 import UIKit
 
-protocol ScoreViewDelegate: AnyObject {
-    
-}
-
-class ScoreView: UIView {
+class PointsView: UIView {
     // MARK: - Private properties
     private var openHeightConstraint: NSLayoutConstraint!
     private var closedHeightConstraint: NSLayoutConstraint!
     
     
     // MARK: - Public properties
-    var delegate: ScoreViewDelegate?
-    
-    var availableScores: [Score] {
+    var availablePoints: [PointData] {
         didSet {
             updateScores()
         }
     }
     
-    init(availableScores: [Score]) {
-        self.availableScores = availableScores
+    init(availableScores: [PointData]) {
+        self.availablePoints = availableScores
         super.init(frame: .zero)
         
         setupUI()
@@ -96,7 +90,6 @@ class ScoreView: UIView {
     
     
     // MARK: - UI
-    
     lazy private var plusButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "icon-plus"), for: .normal)
@@ -119,7 +112,7 @@ class ScoreView: UIView {
         layout.itemSize = CGSize(width: 40, height: 40)
         let cv = UICollectionView(frame: CGRect(x: 0, y: 0, width: 0, height: 0),
                                   collectionViewLayout: layout)
-        let identifier = ScoreCollectionViewCell.identifier
+        let identifier = PointsCollectionViewCell.identifier
         cv.register(UINib(nibName: identifier , bundle: nil), forCellWithReuseIdentifier: identifier)
         cv.backgroundColor = .clear
         cv.dataSource = self
@@ -129,15 +122,15 @@ class ScoreView: UIView {
 }
 
 // MARK: - UICollectionViewDataSource & UICollectionViewDelegate
-extension ScoreView: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension PointsView: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return availableScores.count
+        return availablePoints.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let id = ScoreCollectionViewCell.identifier
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: id , for: indexPath) as! ScoreCollectionViewCell
-        cell.setupUI(score: availableScores[indexPath.row])
+        let id = PointsCollectionViewCell.identifier
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: id , for: indexPath) as! PointsCollectionViewCell
+        cell.setupUI(score: availablePoints[indexPath.row])
         return cell
     }
     

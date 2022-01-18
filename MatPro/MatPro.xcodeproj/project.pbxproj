@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		230C5F2D2795F2C200BAEF61 /* ScoreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230C5F2B2795F2C200BAEF61 /* ScoreCollectionViewCell.swift */; };
-		230C5F2E2795F2C200BAEF61 /* ScoreCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 230C5F2C2795F2C200BAEF61 /* ScoreCollectionViewCell.xib */; };
+		230C5F2D2795F2C200BAEF61 /* PointsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230C5F2B2795F2C200BAEF61 /* PointsCollectionViewCell.swift */; };
+		230C5F2E2795F2C200BAEF61 /* PointsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 230C5F2C2795F2C200BAEF61 /* PointsCollectionViewCell.xib */; };
 		233954FE2793567100002913 /* DoubleLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233954FD2793567100002913 /* DoubleLinkedList.swift */; };
 		233955002793660400002913 /* UIInterfaceOrientation+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233954FF2793660400002913 /* UIInterfaceOrientation+Ext.swift */; };
 		233955052793667100002913 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233955042793667100002913 /* BaseViewController.swift */; };
 		233955072793B3EB00002913 /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233955062793B3EB00002913 /* MatchViewController.swift */; };
-		2339550D2793B84D00002913 /* ScoresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2339550C2793B84D00002913 /* ScoresView.swift */; };
+		2339550D2793B84D00002913 /* PointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2339550C2793B84D00002913 /* PointsView.swift */; };
 		23F2B056270401990092CFC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F2B055270401990092CFC4 /* AppDelegate.swift */; };
 		23F2B058270401990092CFC4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F2B057270401990092CFC4 /* SceneDelegate.swift */; };
 		23F2B05D270401990092CFC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23F2B05B270401990092CFC4 /* Main.storyboard */; };
@@ -40,7 +40,7 @@
 		23F2B0942704062F0092CFC4 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 23F2B0932704062F0092CFC4 /* Realm */; };
 		23F2B0962704062F0092CFC4 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 23F2B0952704062F0092CFC4 /* RealmSwift */; };
 		23F2B09927040DDD0092CFC4 /* ScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F2B09827040DDD0092CFC4 /* ScoreManager.swift */; };
-		23F2B09C27040E690092CFC4 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F2B09B27040E690092CFC4 /* Score.swift */; };
+		23F2B09C27040E690092CFC4 /* PointData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F2B09B27040E690092CFC4 /* PointData.swift */; };
 		23F2B09F27041AF60092CFC4 /* ScoreContants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F2B09E27041AF60092CFC4 /* ScoreContants.swift */; };
 		23F2B0B027041E830092CFC4 /* ScoreManagerLogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F2B0AF27041E830092CFC4 /* ScoreManagerLogicTests.swift */; };
 		23FBDFA6271251FA00860E27 /* LaunchLoading.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23FBDFA5271251FA00860E27 /* LaunchLoading.storyboard */; };
@@ -61,13 +61,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		230C5F2B2795F2C200BAEF61 /* ScoreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCollectionViewCell.swift; sourceTree = "<group>"; };
-		230C5F2C2795F2C200BAEF61 /* ScoreCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScoreCollectionViewCell.xib; sourceTree = "<group>"; };
+		230C5F2B2795F2C200BAEF61 /* PointsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsCollectionViewCell.swift; sourceTree = "<group>"; };
+		230C5F2C2795F2C200BAEF61 /* PointsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PointsCollectionViewCell.xib; sourceTree = "<group>"; };
 		233954FD2793567100002913 /* DoubleLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleLinkedList.swift; sourceTree = "<group>"; };
 		233954FF2793660400002913 /* UIInterfaceOrientation+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIInterfaceOrientation+Ext.swift"; sourceTree = "<group>"; };
 		233955042793667100002913 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		233955062793B3EB00002913 /* MatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
-		2339550C2793B84D00002913 /* ScoresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresView.swift; sourceTree = "<group>"; };
+		2339550C2793B84D00002913 /* PointsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsView.swift; sourceTree = "<group>"; };
 		23F2B052270401990092CFC4 /* MatPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MatPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23F2B055270401990092CFC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		23F2B057270401990092CFC4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,7 +93,7 @@
 		23F2B08D270404430092CFC4 /* ProximaNova-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Bold.otf"; sourceTree = "<group>"; };
 		23F2B08E270404430092CFC4 /* ProximaNova-Sbold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Sbold.otf"; sourceTree = "<group>"; };
 		23F2B09827040DDD0092CFC4 /* ScoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreManager.swift; sourceTree = "<group>"; };
-		23F2B09B27040E690092CFC4 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
+		23F2B09B27040E690092CFC4 /* PointData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointData.swift; sourceTree = "<group>"; };
 		23F2B09E27041AF60092CFC4 /* ScoreContants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreContants.swift; sourceTree = "<group>"; };
 		23F2B0A427041E430092CFC4 /* MatProTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MatProTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		23F2B0A827041E430092CFC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -126,13 +126,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		230C5F262795F28B00BAEF61 /* ScoreCollectionViewCell */ = {
+		230C5F262795F28B00BAEF61 /* PointsCollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				230C5F2B2795F2C200BAEF61 /* ScoreCollectionViewCell.swift */,
-				230C5F2C2795F2C200BAEF61 /* ScoreCollectionViewCell.xib */,
+				230C5F2B2795F2C200BAEF61 /* PointsCollectionViewCell.swift */,
+				230C5F2C2795F2C200BAEF61 /* PointsCollectionViewCell.xib */,
 			);
-			path = ScoreCollectionViewCell;
+			path = PointsCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		233954FC2793566500002913 /* DataStructures */ = {
@@ -152,13 +152,13 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		2339550B2793B83900002913 /* ScoresView */ = {
+		2339550B2793B83900002913 /* PointsView */ = {
 			isa = PBXGroup;
 			children = (
-				230C5F262795F28B00BAEF61 /* ScoreCollectionViewCell */,
-				2339550C2793B84D00002913 /* ScoresView.swift */,
+				230C5F262795F28B00BAEF61 /* PointsCollectionViewCell */,
+				2339550C2793B84D00002913 /* PointsView.swift */,
 			);
-			path = ScoresView;
+			path = PointsView;
 			sourceTree = "<group>";
 		};
 		23F2B049270401990092CFC4 = {
@@ -266,7 +266,7 @@
 		23F2B09D27041AEC0092CFC4 /* Score */ = {
 			isa = PBXGroup;
 			children = (
-				23F2B09B27040E690092CFC4 /* Score.swift */,
+				23F2B09B27040E690092CFC4 /* PointData.swift */,
 				23F2B09E27041AF60092CFC4 /* ScoreContants.swift */,
 			);
 			path = Score;
@@ -320,7 +320,7 @@
 		23FBDFAF27125A9600860E27 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2339550B2793B83900002913 /* ScoresView */,
+				2339550B2793B83900002913 /* PointsView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -426,7 +426,7 @@
 			files = (
 				23FBDFAC27125A4600860E27 /* Match.storyboard in Resources */,
 				23FBDFA6271251FA00860E27 /* LaunchLoading.storyboard in Resources */,
-				230C5F2E2795F2C200BAEF61 /* ScoreCollectionViewCell.xib in Resources */,
+				230C5F2E2795F2C200BAEF61 /* PointsCollectionViewCell.xib in Resources */,
 				23F2B0902704044B0092CFC4 /* ProximaNova-Sbold.otf in Resources */,
 				23F2B0912704044B0092CFC4 /* ProximaNova-Reg.otf in Resources */,
 				23F2B0622704019A0092CFC4 /* LaunchScreen.storyboard in Resources */,
@@ -450,7 +450,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				230C5F2D2795F2C200BAEF61 /* ScoreCollectionViewCell.swift in Sources */,
+				230C5F2D2795F2C200BAEF61 /* PointsCollectionViewCell.swift in Sources */,
 				23F2B07D2704031A0092CFC4 /* UIColor+Ext.swift in Sources */,
 				23F2B0812704031A0092CFC4 /* UIView+Ext.swift in Sources */,
 				23F2B079270403150092CFC4 /* UIUtils.swift in Sources */,
@@ -471,12 +471,12 @@
 				23FBDFA92712574B00860E27 /* LaunchLoadingViewController.swift in Sources */,
 				23F2B07C2704031A0092CFC4 /* Double+Ext.swift in Sources */,
 				233955002793660400002913 /* UIInterfaceOrientation+Ext.swift in Sources */,
-				2339550D2793B84D00002913 /* ScoresView.swift in Sources */,
+				2339550D2793B84D00002913 /* PointsView.swift in Sources */,
 				23F2B07E2704031A0092CFC4 /* UIFont+Ext.swift in Sources */,
 				23F2B0842704031A0092CFC4 /* DateFormatter+Ext.swift in Sources */,
 				23F2B058270401990092CFC4 /* SceneDelegate.swift in Sources */,
 				23F2B07A2704031A0092CFC4 /* Encodable+Ext.swift in Sources */,
-				23F2B09C27040E690092CFC4 /* Score.swift in Sources */,
+				23F2B09C27040E690092CFC4 /* PointData.swift in Sources */,
 				23F2B07B2704031A0092CFC4 /* UITextView+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

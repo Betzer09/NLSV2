@@ -16,7 +16,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ScoreCollectionViewCell" id="gTV-IL-0wX" customClass="ScoreCollectionViewCell" customModule="MatPro" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PointsCollectionViewCell" id="gTV-IL-0wX" customClass="PointsCollectionViewCell" customModule="MatPro" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -60,7 +60,7 @@
                 <outlet property="containerView" destination="YMd-bQ-ajr" id="TTf-56-mTl"/>
                 <outlet property="scoreLabel" destination="6xq-us-5aN" id="JGK-ff-7rG"/>
             </connections>
-            <point key="canvasLocation" x="236.95652173913047" y="154.35267857142856"/>
+            <point key="canvasLocation" x="236.23188405797103" y="154.01785714285714"/>
         </collectionViewCell>
     </objects>
     <resources>

@@ -8,7 +8,7 @@
 import Foundation
 
 
-protocol Score {
+protocol PointData {
     var name: String {get}
     var points: Int {get set}
     var scorer: Scorer? {get set}
@@ -16,12 +16,12 @@ protocol Score {
     var position: Position? {get set}
 }
 
-func ==(lhs: Score, rhs: Score) -> Bool {
+func ==(lhs: PointData, rhs: PointData) -> Bool {
     guard type(of: lhs) == type(of: rhs) else { return false }
     return lhs.points == rhs.points && lhs.name == rhs.name && lhs.scorer == rhs.scorer && lhs.position == rhs.position
 }
 
-func !=(lhs: Score, rhs: Score) -> Bool {
+func !=(lhs: PointData, rhs: PointData) -> Bool {
     return !(lhs == rhs)
 }
 
@@ -36,7 +36,7 @@ enum Scorer {
     case home, away
 }
 
-struct LocalScore: Score, Equatable {
+struct Point: PointData, Equatable {
     
     /// T2, E1, N3
     var name: String

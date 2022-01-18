@@ -7,16 +7,16 @@
 
 import UIKit
 
-class ScoreCollectionViewCell: UICollectionViewCell {
+class PointsCollectionViewCell: UICollectionViewCell {
     
-    static let identifier = "ScoreCollectionViewCell"
+    static let identifier = "PointsCollectionViewCell"
     
     @IBOutlet private var scoreLabel: UILabel!
     @IBOutlet private var containerView: UIView!
     
-    private var score: Score?
+    private var score: PointData?
     
-    func setupUI(score: Score) {
+    func setupUI(score: PointData) {
         self.score = score
         scoreLabel.text = score.name
         containerView.layer.cornerRadius = containerView.frame.width / 2
