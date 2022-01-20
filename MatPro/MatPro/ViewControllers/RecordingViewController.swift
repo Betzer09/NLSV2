@@ -88,7 +88,7 @@ class RecordingViewController: BaseViewController {
     }
     
     private func navigateUsersToSettings() {
-        view.backgroundColor = .black
+        view.backgroundColor = .purple
 //        presentSimpleAlert(title: "Camera Permissions Restricted",
 //                           message: "Go to settings and enable camera permissions to record content.",
 //                           okayTitle: "Go to Settings") {

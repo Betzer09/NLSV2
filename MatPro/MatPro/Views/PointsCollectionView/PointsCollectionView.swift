@@ -45,10 +45,6 @@ class PointsCollectionView: UIView {
         return cv
     }()
     
-    func setup() {
-        let _ = pointsCollectionView
-    }
-    
     func reloadCollectionView(with pointData: [PointData]) {
         self.availablePoints = pointData
         reloadCollectionView()
@@ -65,6 +61,7 @@ extension PointsCollectionView: UICollectionViewDataSource, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return availablePoints.count
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let id = PointsCollectionViewCell.identifier

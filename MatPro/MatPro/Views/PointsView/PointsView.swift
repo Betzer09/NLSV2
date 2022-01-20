@@ -67,8 +67,6 @@ class PointsView: UIView {
         pointsCollectionView.bottomAnchor.constraint(equalTo: backgroundView.bottomAnchor).isActive = true
         pointsCollectionView.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor).isActive = true
         pointsCollectionView.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor).isActive = true
-        
-        pointsCollectionView.setup()
     }
     
     private final func openView() {

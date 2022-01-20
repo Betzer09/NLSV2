@@ -7,6 +7,9 @@
 
 import Foundation
 
+protocol ScoreData: PointData {
+    
+}
 
 protocol PointData {
     var name: String {get}
