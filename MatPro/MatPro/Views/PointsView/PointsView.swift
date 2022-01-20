@@ -15,7 +15,7 @@ class PointsView: UIView {
     
     
     // MARK: - Public properties
-    var availablePoints: [PointData] {
+    private var availablePoints: [PointData] {
         didSet {
             updateScores()
         }
@@ -27,6 +27,7 @@ class PointsView: UIView {
         
         setupUI()
         collapseView()
+        updateScores()
     }
     
     
@@ -35,7 +36,7 @@ class PointsView: UIView {
     }
     
     private func updateScores() {
-        pointsCollectionView.reloadData()
+        pointsCollectionView.reloadCollectionView(with: availablePoints)
     }
     
     private func setupUI() {
@@ -66,6 +67,8 @@ class PointsView: UIView {
         pointsCollectionView.bottomAnchor.constraint(equalTo: backgroundView.bottomAnchor).isActive = true
         pointsCollectionView.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor).isActive = true
         pointsCollectionView.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor).isActive = true
+        
+        pointsCollectionView.setup()
     }
     
     private final func openView() {
@@ -86,9 +89,6 @@ class PointsView: UIView {
         closedHeightConstraint.isActive ? openView() : collapseView()
     }
     
-    
-    
-    
     // MARK: - UI
     lazy private var plusButton: UIButton = {
         let button = UIButton()
@@ -105,38 +105,8 @@ class PointsView: UIView {
         return view
     }()
     
-    lazy private var pointsCollectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
-        layout.itemSize = CGSize(width: 40, height: 40)
-        let cv = UICollectionView(frame: CGRect(x: 0, y: 0, width: 0, height: 0),
-                                  collectionViewLayout: layout)
-        let identifier = PointsCollectionViewCell.identifier
-        cv.register(UINib(nibName: identifier , bundle: nil), forCellWithReuseIdentifier: identifier)
-        cv.backgroundColor = .clear
-        cv.dataSource = self
-        cv.delegate = self
-        return cv
+    lazy private var pointsCollectionView: PointsCollectionView = {
+        let pointsCollectionView = PointsCollectionView(scrollDirection: .vertical)
+        return pointsCollectionView
     }()
-}
-
-// MARK: - UICollectionViewDataSource & UICollectionViewDelegate
-extension PointsView: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return availablePoints.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let id = PointsCollectionViewCell.identifier
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: id , for: indexPath) as! PointsCollectionViewCell
-        cell.setupUI(score: availablePoints[indexPath.row])
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
-    }
-    
-    
 }

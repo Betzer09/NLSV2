@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		230C5F2D2795F2C200BAEF61 /* PointsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230C5F2B2795F2C200BAEF61 /* PointsCollectionViewCell.swift */; };
 		230C5F2E2795F2C200BAEF61 /* PointsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 230C5F2C2795F2C200BAEF61 /* PointsCollectionViewCell.xib */; };
+		230C5F312796645200BAEF61 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230C5F302796645200BAEF61 /* ScoreView.swift */; };
+		230C5F34279665AD00BAEF61 /* ScoreCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230C5F33279665AD00BAEF61 /* ScoreCollectionView.swift */; };
 		233954FE2793567100002913 /* DoubleLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233954FD2793567100002913 /* DoubleLinkedList.swift */; };
 		233955002793660400002913 /* UIInterfaceOrientation+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233954FF2793660400002913 /* UIInterfaceOrientation+Ext.swift */; };
 		233955052793667100002913 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233955042793667100002913 /* BaseViewController.swift */; };
 		233955072793B3EB00002913 /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233955062793B3EB00002913 /* MatchViewController.swift */; };
 		2339550D2793B84D00002913 /* PointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2339550C2793B84D00002913 /* PointsView.swift */; };
+		238D87EB2798F14B00DA0C30 /* PointsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238D87EA2798F14B00DA0C30 /* PointsCollectionView.swift */; };
 		23F2B056270401990092CFC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F2B055270401990092CFC4 /* AppDelegate.swift */; };
 		23F2B058270401990092CFC4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F2B057270401990092CFC4 /* SceneDelegate.swift */; };
 		23F2B05D270401990092CFC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23F2B05B270401990092CFC4 /* Main.storyboard */; };
@@ -63,11 +66,14 @@
 /* Begin PBXFileReference section */
 		230C5F2B2795F2C200BAEF61 /* PointsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsCollectionViewCell.swift; sourceTree = "<group>"; };
 		230C5F2C2795F2C200BAEF61 /* PointsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PointsCollectionViewCell.xib; sourceTree = "<group>"; };
+		230C5F302796645200BAEF61 /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
+		230C5F33279665AD00BAEF61 /* ScoreCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCollectionView.swift; sourceTree = "<group>"; };
 		233954FD2793567100002913 /* DoubleLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleLinkedList.swift; sourceTree = "<group>"; };
 		233954FF2793660400002913 /* UIInterfaceOrientation+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIInterfaceOrientation+Ext.swift"; sourceTree = "<group>"; };
 		233955042793667100002913 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		233955062793B3EB00002913 /* MatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
 		2339550C2793B84D00002913 /* PointsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsView.swift; sourceTree = "<group>"; };
+		238D87EA2798F14B00DA0C30 /* PointsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsCollectionView.swift; sourceTree = "<group>"; };
 		23F2B052270401990092CFC4 /* MatPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MatPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23F2B055270401990092CFC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		23F2B057270401990092CFC4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -135,6 +141,15 @@
 			path = PointsCollectionViewCell;
 			sourceTree = "<group>";
 		};
+		230C5F2F2796644900BAEF61 /* ScoreView */ = {
+			isa = PBXGroup;
+			children = (
+				230C5F302796645200BAEF61 /* ScoreView.swift */,
+				230C5F33279665AD00BAEF61 /* ScoreCollectionView.swift */,
+			);
+			path = ScoreView;
+			sourceTree = "<group>";
+		};
 		233954FC2793566500002913 /* DataStructures */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +174,14 @@
 				2339550C2793B84D00002913 /* PointsView.swift */,
 			);
 			path = PointsView;
+			sourceTree = "<group>";
+		};
+		238D87E92798F14000DA0C30 /* PointsCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				238D87EA2798F14B00DA0C30 /* PointsCollectionView.swift */,
+			);
+			path = PointsCollectionView;
 			sourceTree = "<group>";
 		};
 		23F2B049270401990092CFC4 = {
@@ -320,6 +343,8 @@
 		23FBDFAF27125A9600860E27 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				238D87E92798F14000DA0C30 /* PointsCollectionView */,
+				230C5F2F2796644900BAEF61 /* ScoreView */,
 				2339550B2793B83900002913 /* PointsView */,
 			);
 			path = Views;
@@ -461,6 +486,7 @@
 				23FBDFB527125F2900860E27 /* MainTabViewController.swift in Sources */,
 				23F2B0852704031A0092CFC4 /* Data+Ext.swift in Sources */,
 				23F2B0832704031A0092CFC4 /* UITapGestureRecognizer+Ext.swift in Sources */,
+				230C5F312796645200BAEF61 /* ScoreView.swift in Sources */,
 				23F2B0822704031A0092CFC4 /* String+Ext.swift in Sources */,
 				23F2B0862704031A0092CFC4 /* UIImage+Ext.swift in Sources */,
 				233955052793667100002913 /* BaseViewController.swift in Sources */,
@@ -476,8 +502,10 @@
 				23F2B0842704031A0092CFC4 /* DateFormatter+Ext.swift in Sources */,
 				23F2B058270401990092CFC4 /* SceneDelegate.swift in Sources */,
 				23F2B07A2704031A0092CFC4 /* Encodable+Ext.swift in Sources */,
+				238D87EB2798F14B00DA0C30 /* PointsCollectionView.swift in Sources */,
 				23F2B09C27040E690092CFC4 /* PointData.swift in Sources */,
 				23F2B07B2704031A0092CFC4 /* UITextView+Ext.swift in Sources */,
+				230C5F34279665AD00BAEF61 /* ScoreCollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
