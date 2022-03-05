@@ -34,6 +34,10 @@ class ScoreView: UIView {
         backgroundContainerView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         backgroundContainerView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         backgroundContainerView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        
+        addSubview(homeScoreView)
+        backgroundContainerView.translatesAutoresizingMaskIntoConstraints = false
+           
     }
     
 
@@ -46,6 +50,11 @@ class ScoreView: UIView {
     
     private lazy var homeScoreView: PointsCollectionView = {
         let collectionView = PointsCollectionView(scrollDirection: .horizontal)
+        var scores = [PointData]()
+        scores.append(WrestlingScores.folkStyleNeutralScoretypes[0])
+        scores.append(contentsOf: blanksScore)
+        scores.append(WrestlingScores.folkStyleNeutralScoretypes[0])
+        collectionView.reloadCollectionView(with: scores)
         return collectionView
     }()
     
@@ -53,4 +62,11 @@ class ScoreView: UIView {
         let collectionView = PointsCollectionView(scrollDirection: .horizontal)
         return collectionView
     }()
+    
+    private var blanksScore: [PointData] {
+        let data = Point(name: "", points: 10, longName: "", scorer: nil, position: nil)
+        return [data]
+    }
 }
+
+

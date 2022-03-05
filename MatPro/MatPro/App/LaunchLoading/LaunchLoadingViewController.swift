@@ -9,22 +9,10 @@ import Foundation
 import UIKit
 
 class LaunchLoadingViewController: UIViewController {
-    // MARK: - Outlets
-    
-    // MARK: - Properties
-    
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UIUtils.presentMainTab()
+        AppFlowManager.presentMainTab()
     }
-    
-    // MARK: - View Overrides
-    
-    // MARK: - Actions
-    
-    // MARK: - Public methods
-    
-    // MARK: - Private
 }

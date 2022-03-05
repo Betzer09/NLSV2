@@ -17,6 +17,7 @@
 		233955072793B3EB00002913 /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233955062793B3EB00002913 /* MatchViewController.swift */; };
 		2339550D2793B84D00002913 /* PointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2339550C2793B84D00002913 /* PointsView.swift */; };
 		238D87EB2798F14B00DA0C30 /* PointsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238D87EA2798F14B00DA0C30 /* PointsCollectionView.swift */; };
+		23E2E43B27D3DA68007E71FA /* AppFlowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E2E43A27D3DA68007E71FA /* AppFlowManager.swift */; };
 		23F2B056270401990092CFC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F2B055270401990092CFC4 /* AppDelegate.swift */; };
 		23F2B058270401990092CFC4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F2B057270401990092CFC4 /* SceneDelegate.swift */; };
 		23F2B05D270401990092CFC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23F2B05B270401990092CFC4 /* Main.storyboard */; };
@@ -74,6 +75,7 @@
 		233955062793B3EB00002913 /* MatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
 		2339550C2793B84D00002913 /* PointsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsView.swift; sourceTree = "<group>"; };
 		238D87EA2798F14B00DA0C30 /* PointsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsCollectionView.swift; sourceTree = "<group>"; };
+		23E2E43A27D3DA68007E71FA /* AppFlowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowManager.swift; sourceTree = "<group>"; };
 		23F2B052270401990092CFC4 /* MatPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MatPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23F2B055270401990092CFC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		23F2B057270401990092CFC4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -205,11 +207,11 @@
 		23F2B054270401990092CFC4 /* MatPro */ = {
 			isa = PBXGroup;
 			children = (
+				23F2B09A27040E600092CFC4 /* Models */,
 				233954FC2793566500002913 /* DataStructures */,
-				23FBDFAF27125A9600860E27 /* Views */,
+				23FBDFAF27125A9600860E27 /* CoreComponents */,
 				233955022793664A00002913 /* ViewControllers */,
 				23FBDFA4271251E700860E27 /* App */,
-				23F2B09A27040E600092CFC4 /* Models */,
 				23F2B09727040DC70092CFC4 /* Controllers */,
 				23F2B069270402EE0092CFC4 /* Utilities */,
 				23F2B087270403510092CFC4 /* Resources */,
@@ -224,6 +226,7 @@
 		23F2B069270402EE0092CFC4 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				23E2E43A27D3DA68007E71FA /* AppFlowManager.swift */,
 				23F2B078270403120092CFC4 /* UIUtils.swift */,
 				23F2B06A270402F50092CFC4 /* Extensions */,
 			);
@@ -340,14 +343,14 @@
 			path = Recording;
 			sourceTree = "<group>";
 		};
-		23FBDFAF27125A9600860E27 /* Views */ = {
+		23FBDFAF27125A9600860E27 /* CoreComponents */ = {
 			isa = PBXGroup;
 			children = (
 				238D87E92798F14000DA0C30 /* PointsCollectionView */,
 				230C5F2F2796644900BAEF61 /* ScoreView */,
 				2339550B2793B83900002913 /* PointsView */,
 			);
-			path = Views;
+			path = CoreComponents;
 			sourceTree = "<group>";
 		};
 		23FBDFB327125F1D00860E27 /* MainTab */ = {
@@ -479,6 +482,7 @@
 				23F2B07D2704031A0092CFC4 /* UIColor+Ext.swift in Sources */,
 				23F2B0812704031A0092CFC4 /* UIView+Ext.swift in Sources */,
 				23F2B079270403150092CFC4 /* UIUtils.swift in Sources */,
+				23E2E43B27D3DA68007E71FA /* AppFlowManager.swift in Sources */,
 				233954FE2793567100002913 /* DoubleLinkedList.swift in Sources */,
 				23F2B056270401990092CFC4 /* AppDelegate.swift in Sources */,
 				23F2B07F2704031A0092CFC4 /* UIImageView+Ext.swift in Sources */,
