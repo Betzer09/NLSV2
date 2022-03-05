@@ -15,13 +15,13 @@ class PointsView: UIView {
     
     
     // MARK: - Public properties
-    private var availablePoints: [PointData] {
+    private var availablePoints: [PointStructure] {
         didSet {
             updateScores()
         }
     }
     
-    init(availableScores: [PointData]) {
+    init(availableScores: [PointStructure]) {
         self.availablePoints = availableScores
         super.init(frame: .zero)
         

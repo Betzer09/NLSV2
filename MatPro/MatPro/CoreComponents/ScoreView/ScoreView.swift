@@ -11,9 +11,9 @@ import TinyConstraints
 
 class ScoreView: UIView {
     
-    private var scores: [ScoreData] = []
+    private var scores: [ScoreStructure] = []
     
-    init(score: [ScoreData] = []) {
+    init(score: [ScoreStructure] = []) {
         self.scores = score
         super.init(frame: .zero)
         setupUI()
@@ -23,7 +23,7 @@ class ScoreView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func set(scores: [ScoreData]) {
+    func set(scores: [ScoreStructure]) {
         self.scores = scores
     }
     
@@ -61,7 +61,7 @@ class ScoreView: UIView {
     private lazy var homeTopScoreView: PointsCollectionView = {
         let collectionView = PointsCollectionView(scrollDirection: .horizontal)
         collectionView.backgroundColor = .orange
-        var scores = [PointData]()
+        var scores = [PointStructure]()
         scores.append(WrestlingScores.folkStyleNeutralScoretypes[0])
         scores.append(contentsOf: blanksScore)
         scores.append(WrestlingScores.folkStyleNeutralScoretypes[0])
@@ -75,7 +75,7 @@ class ScoreView: UIView {
         return collectionView
     }()
     
-    private var blanksScore: [PointData] {
+    private var blanksScore: [PointStructure] {
         let data = Point(name: "", points: 10, longName: "", scorer: nil, position: nil, isVisible: false)
         return [data]
     }

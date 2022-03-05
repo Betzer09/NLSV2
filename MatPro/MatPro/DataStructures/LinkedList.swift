@@ -3,9 +3,7 @@
 //  MatPro
 //
 //  Created by Austin Betzer on 1/15/22.
-//  Pulled from https://github.com/SergeyKuryanov/Swift-Data-Structures-and-Algorithms/tree/master/Linked%20List
-//  information about LinkedLists https://www.geeksforgeeks.org/doubly-linked-list/
-//
+
 
 import Foundation
 

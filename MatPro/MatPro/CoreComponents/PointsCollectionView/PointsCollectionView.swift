@@ -11,7 +11,7 @@ import UIKit
 class PointsCollectionView: UIView {
     
     private let scrollDirection: UICollectionView.ScrollDirection
-    private var availablePoints: [PointData] = []
+    private var availablePoints: [PointStructure] = []
   
     struct PointsCollectionViewConstants {
         static let horizontalInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
@@ -49,7 +49,7 @@ class PointsCollectionView: UIView {
         return cv
     }()
     
-    func reloadCollectionView(with pointData: [PointData]) {
+    func reloadCollectionView(with pointData: [PointStructure]) {
         self.availablePoints = pointData
         reloadCollectionView()
     }
