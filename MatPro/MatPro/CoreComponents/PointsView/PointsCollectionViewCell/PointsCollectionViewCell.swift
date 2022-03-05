@@ -20,5 +20,6 @@ class PointsCollectionViewCell: UICollectionViewCell {
         self.score = score
         scoreLabel.text = score.name
         containerView.layer.cornerRadius = containerView.frame.width / 2
+        containerView.backgroundColor = score.isVisible ? .backgroundWhite : .clear
     }
 }

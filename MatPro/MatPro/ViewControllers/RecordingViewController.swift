@@ -188,7 +188,7 @@ extension RecordingViewController: AVCaptureFileOutputRecordingDelegate {
     
     private func stopVideoCapture() {
         print("[RecordingViewController]: stopping recording")
-        shutterButton.layer.borderColor = UIColor.white.cgColor
+        shutterButton.layer.borderColor = UIColor.backgroundWhite.cgColor
         guard let captureSession = self.captureSession, captureSession.isRunning else {
             print("[RecordingViewController]: No capture session was found and recording could not be stopped.")
             return

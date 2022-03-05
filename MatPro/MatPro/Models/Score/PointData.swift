@@ -7,9 +7,6 @@
 
 import Foundation
 
-protocol ScoreData: PointData {
-    
-}
 
 protocol PointData {
     var name: String {get}
@@ -17,6 +14,8 @@ protocol PointData {
     var scorer: Scorer? {get set}
     var longName: String {get}
     var position: Position? {get set}
+    /// Dictates whether a score is visible or not
+    var isVisible: Bool {get}
 }
 
 func ==(lhs: PointData, rhs: PointData) -> Bool {
@@ -27,9 +26,6 @@ func ==(lhs: PointData, rhs: PointData) -> Bool {
 func !=(lhs: PointData, rhs: PointData) -> Bool {
     return !(lhs == rhs)
 }
-
-
-
 
 enum Position {
     case top, bottom, neutral
@@ -48,6 +44,16 @@ struct Point: PointData, Equatable {
     var longName: String
     var scorer: Scorer?
     var position: Position?
+    var isVisible: Bool
+    
+    init(name: String, points: Int, longName: String, scorer: Scorer? = nil, position: Position? = nil, isVisible: Bool = true) {
+        self.name = name
+        self.points = points
+        self.longName = longName
+        self.scorer = scorer
+        self.position = position
+        self.isVisible = isVisible
+    }
     
     mutating func setPoints(_ points: Int) {
         self.points = points

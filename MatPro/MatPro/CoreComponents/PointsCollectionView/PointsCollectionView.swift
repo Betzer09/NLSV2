@@ -13,6 +13,10 @@ class PointsCollectionView: UIView {
     private let scrollDirection: UICollectionView.ScrollDirection
     private var availablePoints: [PointData] = []
   
+    struct PointsCollectionViewConstants {
+        static let horizontalInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+        static let verticalInsets = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
+    }
     
     init(scrollDirection: UICollectionView.ScrollDirection) {
         self.scrollDirection = scrollDirection
@@ -33,7 +37,7 @@ class PointsCollectionView: UIView {
     lazy private var pointsCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = scrollDirection
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
+        layout.sectionInset = scrollDirection == .horizontal ? PointsCollectionViewConstants.horizontalInsets : PointsCollectionViewConstants.verticalInsets
         layout.itemSize = CGSize(width: 40, height: 40)
         let cv = UICollectionView(frame: .zero,
                                   collectionViewLayout: layout)

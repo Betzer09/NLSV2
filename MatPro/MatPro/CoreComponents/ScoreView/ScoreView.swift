@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import TinyConstraints
 
 class ScoreView: UIView {
     
@@ -26,18 +27,27 @@ class ScoreView: UIView {
         self.scores = scores
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        let splitViewHeight = frame.height * 0.33
+        homeTopScoreView.edgesToSuperview(excluding: .bottom)
+        homeTopScoreView.height(splitViewHeight)
+        
+        awayBottomScoreView.topToBottom(of: homeTopScoreView)
+        awayBottomScoreView.edgesToSuperview(excluding: [.top, .bottom])
+        awayBottomScoreView.height(splitViewHeight)
+        
+    }
+    
     // MARK: - Private
     func setupUI() {
         addSubview(backgroundContainerView)
-        backgroundContainerView.translatesAutoresizingMaskIntoConstraints = false
-        backgroundContainerView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
-        backgroundContainerView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        backgroundContainerView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        backgroundContainerView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        backgroundContainerView.edgesToSuperview(insets: .top(0), usingSafeArea: true)
+        backgroundContainerView.edgesToSuperview(excluding: .top)
         
-        addSubview(homeScoreView)
-        backgroundContainerView.translatesAutoresizingMaskIntoConstraints = false
-           
+        // Constraints added in view did layout subviews
+        backgroundContainerView.addSubview(homeTopScoreView)
+        backgroundContainerView.addSubview(awayBottomScoreView)
     }
     
 
@@ -48,8 +58,9 @@ class ScoreView: UIView {
         return view
     }()
     
-    private lazy var homeScoreView: PointsCollectionView = {
+    private lazy var homeTopScoreView: PointsCollectionView = {
         let collectionView = PointsCollectionView(scrollDirection: .horizontal)
+        collectionView.backgroundColor = .orange
         var scores = [PointData]()
         scores.append(WrestlingScores.folkStyleNeutralScoretypes[0])
         scores.append(contentsOf: blanksScore)
@@ -58,13 +69,14 @@ class ScoreView: UIView {
         return collectionView
     }()
     
-    private lazy var awayScoreView: PointsCollectionView = {
+    private lazy var awayBottomScoreView: PointsCollectionView = {
         let collectionView = PointsCollectionView(scrollDirection: .horizontal)
+        collectionView.backgroundColor = .green
         return collectionView
     }()
     
     private var blanksScore: [PointData] {
-        let data = Point(name: "", points: 10, longName: "", scorer: nil, position: nil)
+        let data = Point(name: "", points: 10, longName: "", scorer: nil, position: nil, isVisible: false)
         return [data]
     }
 }

@@ -91,14 +91,14 @@ class PointsView: UIView {
     lazy private var plusButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "icon-plus"), for: .normal)
-        button.backgroundColor = .white
+        button.backgroundColor = .backgroundWhite
         button.addTarget(self, action: #selector(toggleOpenAndCollapse), for: .touchUpInside)
         return button
     }()
     
     lazy private var backgroundView: UIView = {
         let view = UIView()
-        view.backgroundColor = .white.withAlphaComponent(0.3)
+        view.backgroundColor = .backgroundWhite.withAlphaComponent(0.3)
         view.layer.cornerRadius = 22
         return view
     }()

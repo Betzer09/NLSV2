@@ -10,14 +10,17 @@
 		230C5F2D2795F2C200BAEF61 /* PointsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230C5F2B2795F2C200BAEF61 /* PointsCollectionViewCell.swift */; };
 		230C5F2E2795F2C200BAEF61 /* PointsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 230C5F2C2795F2C200BAEF61 /* PointsCollectionViewCell.xib */; };
 		230C5F312796645200BAEF61 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230C5F302796645200BAEF61 /* ScoreView.swift */; };
-		230C5F34279665AD00BAEF61 /* ScoreCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230C5F33279665AD00BAEF61 /* ScoreCollectionView.swift */; };
-		233954FE2793567100002913 /* DoubleLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233954FD2793567100002913 /* DoubleLinkedList.swift */; };
+		233954FE2793567100002913 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233954FD2793567100002913 /* LinkedList.swift */; };
 		233955002793660400002913 /* UIInterfaceOrientation+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233954FF2793660400002913 /* UIInterfaceOrientation+Ext.swift */; };
 		233955052793667100002913 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233955042793667100002913 /* BaseViewController.swift */; };
 		233955072793B3EB00002913 /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233955062793B3EB00002913 /* MatchViewController.swift */; };
 		2339550D2793B84D00002913 /* PointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2339550C2793B84D00002913 /* PointsView.swift */; };
 		238D87EB2798F14B00DA0C30 /* PointsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238D87EA2798F14B00DA0C30 /* PointsCollectionView.swift */; };
 		23E2E43B27D3DA68007E71FA /* AppFlowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E2E43A27D3DA68007E71FA /* AppFlowManager.swift */; };
+		23E2E44327D40F18007E71FA /* TinyConstraints in Frameworks */ = {isa = PBXBuildFile; productRef = 23E2E44227D40F18007E71FA /* TinyConstraints */; };
+		23E2E44527D41A29007E71FA /* ScoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E2E44427D41A29007E71FA /* ScoreViewModel.swift */; };
+		23E2E44827D41B03007E71FA /* ScoreViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E2E44727D41B03007E71FA /* ScoreViewModelTests.swift */; };
+		23E2E44F27D42418007E71FA /* LinkedListsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E2E44E27D42418007E71FA /* LinkedListsTests.swift */; };
 		23F2B056270401990092CFC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F2B055270401990092CFC4 /* AppDelegate.swift */; };
 		23F2B058270401990092CFC4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F2B057270401990092CFC4 /* SceneDelegate.swift */; };
 		23F2B05D270401990092CFC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23F2B05B270401990092CFC4 /* Main.storyboard */; };
@@ -49,7 +52,6 @@
 		23F2B0B027041E830092CFC4 /* ScoreManagerLogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F2B0AF27041E830092CFC4 /* ScoreManagerLogicTests.swift */; };
 		23FBDFA6271251FA00860E27 /* LaunchLoading.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23FBDFA5271251FA00860E27 /* LaunchLoading.storyboard */; };
 		23FBDFA92712574B00860E27 /* LaunchLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FBDFA82712574B00860E27 /* LaunchLoadingViewController.swift */; };
-		23FBDFAC27125A4600860E27 /* Match.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23FBDFAB27125A4600860E27 /* Match.storyboard */; };
 		23FBDFAE27125A5300860E27 /* RecordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FBDFAD27125A5300860E27 /* RecordingViewController.swift */; };
 		23FBDFB527125F2900860E27 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FBDFB427125F2900860E27 /* MainTabViewController.swift */; };
 /* End PBXBuildFile section */
@@ -68,14 +70,16 @@
 		230C5F2B2795F2C200BAEF61 /* PointsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsCollectionViewCell.swift; sourceTree = "<group>"; };
 		230C5F2C2795F2C200BAEF61 /* PointsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PointsCollectionViewCell.xib; sourceTree = "<group>"; };
 		230C5F302796645200BAEF61 /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
-		230C5F33279665AD00BAEF61 /* ScoreCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCollectionView.swift; sourceTree = "<group>"; };
-		233954FD2793567100002913 /* DoubleLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleLinkedList.swift; sourceTree = "<group>"; };
+		233954FD2793567100002913 /* LinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
 		233954FF2793660400002913 /* UIInterfaceOrientation+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIInterfaceOrientation+Ext.swift"; sourceTree = "<group>"; };
 		233955042793667100002913 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		233955062793B3EB00002913 /* MatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
 		2339550C2793B84D00002913 /* PointsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsView.swift; sourceTree = "<group>"; };
 		238D87EA2798F14B00DA0C30 /* PointsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsCollectionView.swift; sourceTree = "<group>"; };
 		23E2E43A27D3DA68007E71FA /* AppFlowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowManager.swift; sourceTree = "<group>"; };
+		23E2E44427D41A29007E71FA /* ScoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewModel.swift; sourceTree = "<group>"; };
+		23E2E44727D41B03007E71FA /* ScoreViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewModelTests.swift; sourceTree = "<group>"; };
+		23E2E44E27D42418007E71FA /* LinkedListsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedListsTests.swift; sourceTree = "<group>"; };
 		23F2B052270401990092CFC4 /* MatPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MatPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23F2B055270401990092CFC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		23F2B057270401990092CFC4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,7 +112,6 @@
 		23F2B0AF27041E830092CFC4 /* ScoreManagerLogicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreManagerLogicTests.swift; sourceTree = "<group>"; };
 		23FBDFA5271251FA00860E27 /* LaunchLoading.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchLoading.storyboard; sourceTree = "<group>"; };
 		23FBDFA82712574B00860E27 /* LaunchLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchLoadingViewController.swift; sourceTree = "<group>"; };
-		23FBDFAB27125A4600860E27 /* Match.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Match.storyboard; sourceTree = "<group>"; };
 		23FBDFAD27125A5300860E27 /* RecordingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingViewController.swift; sourceTree = "<group>"; };
 		23FBDFB427125F2900860E27 /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,6 +124,7 @@
 				23F2B0962704062F0092CFC4 /* RealmSwift in Frameworks */,
 				23F2B0942704062F0092CFC4 /* Realm in Frameworks */,
 				23F2B08A270403CC0092CFC4 /* SDWebImage in Frameworks */,
+				23E2E44327D40F18007E71FA /* TinyConstraints in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,7 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				230C5F302796645200BAEF61 /* ScoreView.swift */,
-				230C5F33279665AD00BAEF61 /* ScoreCollectionView.swift */,
+				23E2E44427D41A29007E71FA /* ScoreViewModel.swift */,
 			);
 			path = ScoreView;
 			sourceTree = "<group>";
@@ -155,7 +159,7 @@
 		233954FC2793566500002913 /* DataStructures */ = {
 			isa = PBXGroup;
 			children = (
-				233954FD2793567100002913 /* DoubleLinkedList.swift */,
+				233954FD2793567100002913 /* LinkedList.swift */,
 			);
 			path = DataStructures;
 			sourceTree = "<group>";
@@ -184,6 +188,39 @@
 				238D87EA2798F14B00DA0C30 /* PointsCollectionView.swift */,
 			);
 			path = PointsCollectionView;
+			sourceTree = "<group>";
+		};
+		23E2E44627D41AE5007E71FA /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				23E2E44727D41B03007E71FA /* ScoreViewModelTests.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		23E2E44B27D42040007E71FA /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				23F2B09E27041AF60092CFC4 /* ScoreContants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		23E2E44C27D42051007E71FA /* StaticControllers */ = {
+			isa = PBXGroup;
+			children = (
+				23E2E43A27D3DA68007E71FA /* AppFlowManager.swift */,
+				23F2B078270403120092CFC4 /* UIUtils.swift */,
+			);
+			path = StaticControllers;
+			sourceTree = "<group>";
+		};
+		23E2E44D27D423FA007E71FA /* DataStructures */ = {
+			isa = PBXGroup;
+			children = (
+				23E2E44E27D42418007E71FA /* LinkedListsTests.swift */,
+			);
+			path = DataStructures;
 			sourceTree = "<group>";
 		};
 		23F2B049270401990092CFC4 = {
@@ -226,8 +263,8 @@
 		23F2B069270402EE0092CFC4 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				23E2E43A27D3DA68007E71FA /* AppFlowManager.swift */,
-				23F2B078270403120092CFC4 /* UIUtils.swift */,
+				23E2E44B27D42040007E71FA /* Constants */,
+				23E2E44C27D42051007E71FA /* StaticControllers */,
 				23F2B06A270402F50092CFC4 /* Extensions */,
 			);
 			path = Utilities;
@@ -293,7 +330,6 @@
 			isa = PBXGroup;
 			children = (
 				23F2B09B27040E690092CFC4 /* PointData.swift */,
-				23F2B09E27041AF60092CFC4 /* ScoreContants.swift */,
 			);
 			path = Score;
 			sourceTree = "<group>";
@@ -301,6 +337,8 @@
 		23F2B0A527041E430092CFC4 /* MatProTests */ = {
 			isa = PBXGroup;
 			children = (
+				23E2E44D27D423FA007E71FA /* DataStructures */,
+				23E2E44627D41AE5007E71FA /* Components */,
 				23F2B0AE27041E540092CFC4 /* ScoreManager */,
 				23F2B0A827041E430092CFC4 /* Info.plist */,
 			);
@@ -337,7 +375,6 @@
 		23FBDFAA27125A2900860E27 /* Recording */ = {
 			isa = PBXGroup;
 			children = (
-				23FBDFAB27125A4600860E27 /* Match.storyboard */,
 				233955062793B3EB00002913 /* MatchViewController.swift */,
 			);
 			path = Recording;
@@ -382,6 +419,7 @@
 				23F2B089270403CC0092CFC4 /* SDWebImage */,
 				23F2B0932704062F0092CFC4 /* Realm */,
 				23F2B0952704062F0092CFC4 /* RealmSwift */,
+				23E2E44227D40F18007E71FA /* TinyConstraints */,
 			);
 			productName = MatPro;
 			productReference = 23F2B052270401990092CFC4 /* MatPro.app */;
@@ -436,6 +474,7 @@
 			packageReferences = (
 				23F2B088270403CC0092CFC4 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				23F2B0922704062F0092CFC4 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+				23E2E44127D40F18007E71FA /* XCRemoteSwiftPackageReference "TinyConstraints" */,
 			);
 			productRefGroup = 23F2B053270401990092CFC4 /* Products */;
 			projectDirPath = "";
@@ -452,7 +491,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23FBDFAC27125A4600860E27 /* Match.storyboard in Resources */,
 				23FBDFA6271251FA00860E27 /* LaunchLoading.storyboard in Resources */,
 				230C5F2E2795F2C200BAEF61 /* PointsCollectionViewCell.xib in Resources */,
 				23F2B0902704044B0092CFC4 /* ProximaNova-Sbold.otf in Resources */,
@@ -483,7 +521,7 @@
 				23F2B0812704031A0092CFC4 /* UIView+Ext.swift in Sources */,
 				23F2B079270403150092CFC4 /* UIUtils.swift in Sources */,
 				23E2E43B27D3DA68007E71FA /* AppFlowManager.swift in Sources */,
-				233954FE2793567100002913 /* DoubleLinkedList.swift in Sources */,
+				233954FE2793567100002913 /* LinkedList.swift in Sources */,
 				23F2B056270401990092CFC4 /* AppDelegate.swift in Sources */,
 				23F2B07F2704031A0092CFC4 /* UIImageView+Ext.swift in Sources */,
 				23F2B0802704031A0092CFC4 /* UINavigationItem+Ext.swift in Sources */,
@@ -501,6 +539,7 @@
 				23FBDFA92712574B00860E27 /* LaunchLoadingViewController.swift in Sources */,
 				23F2B07C2704031A0092CFC4 /* Double+Ext.swift in Sources */,
 				233955002793660400002913 /* UIInterfaceOrientation+Ext.swift in Sources */,
+				23E2E44527D41A29007E71FA /* ScoreViewModel.swift in Sources */,
 				2339550D2793B84D00002913 /* PointsView.swift in Sources */,
 				23F2B07E2704031A0092CFC4 /* UIFont+Ext.swift in Sources */,
 				23F2B0842704031A0092CFC4 /* DateFormatter+Ext.swift in Sources */,
@@ -509,7 +548,6 @@
 				238D87EB2798F14B00DA0C30 /* PointsCollectionView.swift in Sources */,
 				23F2B09C27040E690092CFC4 /* PointData.swift in Sources */,
 				23F2B07B2704031A0092CFC4 /* UITextView+Ext.swift in Sources */,
-				230C5F34279665AD00BAEF61 /* ScoreCollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,6 +556,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				23F2B0B027041E830092CFC4 /* ScoreManagerLogicTests.swift in Sources */,
+				23E2E44F27D42418007E71FA /* LinkedListsTests.swift in Sources */,
+				23E2E44827D41B03007E71FA /* ScoreViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -785,6 +825,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		23E2E44127D40F18007E71FA /* XCRemoteSwiftPackageReference "TinyConstraints" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/roberthein/TinyConstraints.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 		23F2B088270403CC0092CFC4 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
@@ -804,6 +852,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		23E2E44227D40F18007E71FA /* TinyConstraints */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 23E2E44127D40F18007E71FA /* XCRemoteSwiftPackageReference "TinyConstraints" */;
+			productName = TinyConstraints;
+		};
 		23F2B089270403CC0092CFC4 /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 23F2B088270403CC0092CFC4 /* XCRemoteSwiftPackageReference "SDWebImage" */;
