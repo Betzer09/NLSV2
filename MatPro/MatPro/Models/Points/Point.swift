@@ -18,12 +18,14 @@ enum Scorer {
 
 struct Point: PointStructure, Equatable {
     
+    
     var name: String
     var points: Int
     var longName: String
     var scorer: Scorer?
     var position: Position?
     var isVisible: Bool
+    var scoredAt: TimeInterval
     
     init(name: String,
          points: Int,
@@ -38,6 +40,7 @@ struct Point: PointStructure, Equatable {
         self.scorer = scorer
         self.position = position
         self.isVisible = isVisible
+        self.scoredAt = Date().timeIntervalSince1970
     }
 }
 

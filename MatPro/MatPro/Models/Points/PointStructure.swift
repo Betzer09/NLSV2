@@ -17,6 +17,7 @@ protocol PointStructure {
     var position: Position? {get set}
     /// Dictates whether a score is visible or not
     var isVisible: Bool {get}
+    var scoredAt: TimeInterval {get}
     
     mutating func setPoints(_ points: Int)
     mutating func setScorer(_ scorer: Scorer)

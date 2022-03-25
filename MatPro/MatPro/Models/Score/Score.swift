@@ -7,8 +7,6 @@
 
 import Foundation
 
-
-
 struct Score: ScoreStructure {
     var name: String
     var points: Int
@@ -16,13 +14,15 @@ struct Score: ScoreStructure {
     var longName: String
     var position: Position?
     var isVisible: Bool
+    var scoredAt: TimeInterval
     
     init(name: String,
          points: Int,
          longName: String,
          scorer: Scorer? = nil,
          position: Position? = nil,
-         isVisible: Bool = true) {
+         isVisible: Bool = true,
+         scoredAt: TimeInterval? = nil) {
         
         self.name = name
         self.points = points
@@ -30,5 +30,6 @@ struct Score: ScoreStructure {
         self.scorer = scorer
         self.position = position
         self.isVisible = isVisible
+        self.scoredAt =  scoredAt ?? Date().timeIntervalSince1970
     }
 }
