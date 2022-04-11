@@ -19,5 +19,12 @@ jobs:
       
     - name: Build and test
       run: xcodebuild clean build test -project MatPro/MatPro.xcodeproj -scheme "MatPro" -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 13 Pro" ONLY_ACTIVE_ARCH=NO CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+      
+    - uses: actions/cache@v3
+      with:
+        path: .build
+        key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
+        restore-keys: |
+      ${{ runner.os }}-spm-
 
 
