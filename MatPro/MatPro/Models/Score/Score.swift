@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Score: ScoreStructure {
+struct Score: ScoreStructure, Equatable {
     var name: String
     var points: Int
     var scorer: Scorer?

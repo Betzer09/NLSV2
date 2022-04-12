@@ -9,48 +9,71 @@ import XCTest
 @testable import MatPro
 
 protocol ScoreViewModelOutput {
-    var scores: [ScoreStructure] {get set}
-    var awayScores: [ScoreStructure] {get}
-    var homeScores: [ScoreStructure] {get}
+    var scores: [Score] {get set}
+    var awayScores: [Score] {get}
+    var homeScores: [Score] {get}
 }
 
 protocol ScoreViewModelLogic: ScoreViewModelOutput {
-    func addScore(_ score: ScoreStructure)
-    func removeScore(_ score: ScoreStructure) throws
-    func undoPreviousScore(_ score: ScoreStructure)
+    func addScore(_ score: Score)
+    func removeScore(_ score: Score) throws
+    func undoPreviousScore(_ score: Score)
 }
 
 struct UnableToLocateScoreInListError: Error {}
 
+/// A scores that is used to signify a space an a matches timeline out.
+struct SpaceScore: ScoreStructure {
+    var name: String
+    var points: Int
+    var scorer: Scorer?
+    var longName: String
+    var position: Position?
+    var isVisible: Bool
+    var scoredAt: TimeInterval
+    
+    init(awardedTo scorer: Scorer) {
+        self.isVisible = true
+        self.name = ""
+        
+        self.scoredAt = Date().timeIntervalSince1970
+        self.points = 0
+        self.scorer = scorer
+        self.longName = ""
+        self.position = nil
+    }
+    
+}
+
 class ScoreViewModel: ScoreViewModelLogic {
     let paddingBetweenScores: TimeInterval = 15
     
-    var scores: [ScoreStructure]
+    var scores: [Score]
     
-    var awayScores: [ScoreStructure] {
+    var awayScores: [Score] {
         get {
             return scores.filter( {$0.scorer == .away} )
         }
     }
-    var homeScores: [ScoreStructure] {
+    var homeScores: [Score] {
         get {
             return scores.filter( {$0.scorer == .home} )
         }
     }
     
-    init(scores: [ScoreStructure] = []) {
+    init(scores: [Score] = []) {
         self.scores = scores
     }
     
-    func addScore(_ score: ScoreStructure) {
+    func addScore(_ score: Score) {
         scores.append(score)
     }
     
-    func addScores(_ scores: [ScoreStructure]) {
+    func addScores(_ scores: [Score]) {
         self.scores.append(contentsOf: scores)
     }
     
-    func removeScore(_ score: ScoreStructure) throws {
+    func removeScore(_ score: Score) throws {
         guard let scoreIndex = self.scores.firstIndex(where: {
             $0.scoredAt == score.scoredAt &&
             $0.scorer == score.scorer &&
@@ -63,11 +86,18 @@ class ScoreViewModel: ScoreViewModelLogic {
         
     }
     
-    func undoPreviousScore(_ score: ScoreStructure) {
+    func undoPreviousScore(_ score: Score) {
         scores.removeLast()
     }
     
     func generateScoreTimeline() {
+        var _: [ScoreStructure]
+        for (_, _) in scores.enumerated() {
+            // Make sure we aren't at the first index
+            // Make sure we aren't at the last index
+            
+            // Look at the previous element and compare time between scores
+        }
     }
 }
 
@@ -85,55 +115,41 @@ class ScoreViewModelTests: XCTestCase {
         sut = nil
     }
     
-    func test_setup() {
-        let score1 = makeScore(scorer: .home)
-        let score3 = makeScore(points: 4,  scorer: .home)
-        let homeScores = [score1, score3]
-        
-        let score2 = makeScore(points: 2, scorer: .away)
-        let score4 = makeScore(scorer: .away)
-        let score5 = makeScore(scorer: .away)
-        let awayScores = [score2, score4, score5]
-        sut.addScores(awayScores)
-        sut.addScores(homeScores)
+    func test_setup_withNoScores() {
+        XCTAssert(sut.scores.isEmpty, "expected scores to be empty, got \(sut.scores) instead")
+    }
+    
+    func test_setup_withScoresAdded() {
+        let homeScores = generateUniqueScores(forScorer: .home)
+        let awayScores = generateUniqueScores(forScorer: .away)
+        sut.addScores(awayScores + homeScores)
         
         XCTAssertTrue(sut.scores.count == (homeScores + awayScores).count)
         XCTAssertTrue(sut.awayScores.count == awayScores.count)
         XCTAssertTrue(sut.homeScores.count == homeScores.count)
     }
     
-    func test_timelineGenerateScoreOffSetsBetweenScoresBasedOnTimeScored() {
-//        let score1 = makeScore(scorer: .home, scoredAt: 1)
-//        let score3 = makeScore(points: 4,  scorer: .home, scoredAt: 20) // + 1 Padding
-//        let homeScores = [score1, score3] // three total points
-//
-//        let score2 = makeScore(points: 2, scorer: .away, scoredAt: 5)
-//        let score4 = makeScore(scorer: .away, scoredAt: 10)
-//        let score5 = makeScore(scorer: .away, scoredAt: 45) // + 1 padding
-//        let awayScores = [score2, score4, score5]
-//
-//        let totalPoints = (homeScores + awayScores).shuffled()
-//        sut.addScore(totalPoints)
-//
-//        let homeAdditionalPointsAddedForPadding = sut.homeScores.filter({$0.name == "" && !$0.isVisible})
-//        assert(homeAdditionalPointsAddedForPadding.count > 0, "expected at least one padding score added to list")
-//        let awayAdditionalPointsAddedForPadding =  sut.awayScores.filter({$0.name == "" && !$0.isVisible})
-//        assert(awayAdditionalPointsAddedForPadding.count > 0, "expected at least one padding score added to list")
-//        XCTAssertTrue(sut.awayScores.count == (homeAdditionalPointsAddedForPadding + awayScores).count)
-//        XCTAssertTrue(sut.homeScores.count == (awayAdditionalPointsAddedForPadding + homeScores).count)
-//        XCTAssertTrue(sut.homeScores.count == homeScores.count)
-    }
 
-    func test_addScoreToList() {
+    func test_add_deliversNoErrorWhenAddingNewScore() {
         let score1 = makeScore()
-        let score2 = makeScore(points: 2)
         sut.addScore(score1)
-        sut.addScore(score2)
-        XCTAssertTrue(sut.scores.count == 2)
-        XCTAssertEqual(sut.scores.last?.points, score2.points)
+        XCTAssertEqual(sut.scores.last, score1)
     }
     
-    func test_removeScoreFromList() {
+    func test_add_addingScoreAlsoAddsSpaceScoreToOpponent() {
+//        let score1 = makeScore(scorer: .away)
+//        let score2 = makeScore(scorer: .home)
+//        sut.addScores([score1, score2])
+//
+//
+//        XCTAssertTrue(sut.scores.count == 4, "expected every score to contain a separator score.")
+//        let homeSeparatorCount = sut.homeScores.filter({ $0.isVisible == false }).count
+//        let awaySeparatorCount = sut.awayScores.filter({ $0.isVisible == false }).count
+//        XCTAssertEqual(homeSeparatorCount, 1, "expected HOME to have at least 1 separator score, got \(homeSeparatorCount) instead")
+//        XCTAssertEqual(awaySeparatorCount, 1, "expected AWAY to have at least 1 separator score, got \(awaySeparatorCount) instead")
+    }
+    
+    func test_remove_removeScoreFromCollection() {
         let score1 = makeScore()
         let score2 = makeScore(points: 2)
         let score3 = makeScore(points: 4)
@@ -145,7 +161,7 @@ class ScoreViewModelTests: XCTestCase {
         XCTAssertEqual(sut.scores.last?.points, score2.points)
     }
     
-    func test_undoPreviousScore() {
+    func test_undo_undoPreviousScoreFromCollection() {
         let score1 = makeScore()
         let score2 = makeScore(points: 2)
         let score3 = makeScore(points: 4)
@@ -165,18 +181,26 @@ class ScoreViewModelTests: XCTestCase {
                            scorer: Scorer? = [.home, .away].randomElement(),
                            position: Position? = [.top, .bottom, .neutral].randomElement(),
                            scoredAt: TimeInterval? = Date().timeIntervalSince1970,
-                           isVisible: Bool = true) -> ScoreStructure {
+                           isVisible: Bool = true) -> Score {
         
         return Score(name: name, points: points, longName: longName, scorer: scorer,
                      position: position, isVisible: isVisible, scoredAt: scoredAt)
     }
     
     
-    private func generateUniqueScores(appendItemToEnd item: ScoreStructure) -> [ScoreStructure] {
-        let score1 = makeScore()
-        let score2 = makeScore(points: 2)
-        let score3 = makeScore(points: 4)
-        return [score1, score2, score3]
+    private func generateUniqueScores(appendItemToEnd item: ScoreStructure? = nil, forScorer scorer: Scorer? = nil) -> [Score] {
+        let score1 = makeScore(scorer: scorer)
+        let score2 = makeScore(points: 2, scorer: scorer)
+        let score3 = makeScore(points: 4, scorer: scorer)
+        var scores = [score1, score2, score3]
+        
+        guard let item = item else {
+            return scores
+        }
+        
+        scores.append(item)
+        
+        return scores
     }
 }
 

@@ -18,7 +18,6 @@ enum Scorer {
 
 struct Point: PointStructure, Equatable {
     
-    
     var name: String
     var points: Int
     var longName: String
