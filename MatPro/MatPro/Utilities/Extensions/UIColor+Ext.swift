@@ -25,7 +25,7 @@ extension UIColor {
     /// #888888
     static let gray3 = UIColor(named: "gray3")!
     /// #FFFFFF
-    static let white = UIColor(named: "White")!
+    static let backgroundWhite = UIColor(named: "White")!
     /// #E72039
     static let red = UIColor(named: "Red")!
     /// #1CA7A7

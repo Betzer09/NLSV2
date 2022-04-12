@@ -14,14 +14,14 @@ class MainTabViewController: UIViewController {
         super.viewDidLoad()
         UIUtils.lockOrientation(.portrait, andRotateTo: .portrait)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
             self.startTapped(self)
         })
     }
     
     
     @IBAction private func startTapped (_ sender: Any) {
-        let vc = Storyboards.match.initialize()
+        let vc = MatchViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
 }

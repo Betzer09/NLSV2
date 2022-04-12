@@ -14,11 +14,12 @@ class PointsCollectionViewCell: UICollectionViewCell {
     @IBOutlet private var scoreLabel: UILabel!
     @IBOutlet private var containerView: UIView!
     
-    private var score: PointData?
+    private var score: PointStructure?
     
-    func setupUI(score: PointData) {
+    func setupUI(score: PointStructure) {
         self.score = score
         scoreLabel.text = score.name
         containerView.layer.cornerRadius = containerView.frame.width / 2
+        containerView.backgroundColor = score.isVisible ? .backgroundWhite : .clear
     }
 }

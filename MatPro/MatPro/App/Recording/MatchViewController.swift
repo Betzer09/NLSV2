@@ -14,7 +14,13 @@ final class MatchViewController: RecordingViewController {
     // Left Score Button
     // Right Score Button
     
+    init() {
+        super.init(nibName: nil, bundle: nil)
+    }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - View Life Cycle 
     override func viewDidLoad() {
@@ -24,31 +30,43 @@ final class MatchViewController: RecordingViewController {
     }
     
     private func setupUI() {
+        view.backgroundColor = .lightGray
         
         // Home score view
-        view.addSubview(homeScoreView)
-        homeScoreView.translatesAutoresizingMaskIntoConstraints = false
-        homeScoreView.widthAnchor.constraint(equalToConstant: 44).isActive = true
-        homeScoreView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.6).isActive = true
-        homeScoreView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
-        homeScoreView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
+        view.addSubview(homePointsView)
+        homePointsView.translatesAutoresizingMaskIntoConstraints = false
+        homePointsView.widthAnchor.constraint(equalToConstant: 44).isActive = true
+        homePointsView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.6).isActive = true
+        homePointsView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
+        homePointsView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
         
-        view.addSubview(awayScoreView)
-        awayScoreView.translatesAutoresizingMaskIntoConstraints = false
-        awayScoreView.widthAnchor.constraint(equalToConstant: 44).isActive = true
-        awayScoreView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.6).isActive = true
-        awayScoreView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
-        awayScoreView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
+        view.addSubview(awayPointsView)
+        awayPointsView.translatesAutoresizingMaskIntoConstraints = false
+        awayPointsView.widthAnchor.constraint(equalToConstant: 44).isActive = true
+        awayPointsView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.6).isActive = true
+        awayPointsView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
+        awayPointsView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
+        
+        view.addSubview(scoreContainer)
+        scoreContainer.translatesAutoresizingMaskIntoConstraints = false
+        scoreContainer.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        scoreContainer.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+        scoreContainer.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.45).isActive = true
     }
     
     // MARK: - UI
-    private lazy var homeScoreView: PointsView = {
+    private lazy var homePointsView: PointsView = {
         let view = PointsView(availableScores: WrestlingScores.folkStyleNeutralScoretypes + WrestlingScores.folkStyleNeutralScoretypes )
         return view
     }()
     
-    private lazy var awayScoreView: PointsView = {
+    private lazy var awayPointsView: PointsView = {
         let view = PointsView(availableScores: WrestlingScores.folkStyleNeutralScoretypes + WrestlingScores.folkStyleNeutralScoretypes)
+        return view
+    }()
+    
+    private lazy var scoreContainer: ScoreView = {
+        let view = ScoreView()
         return view
     }()
     

@@ -88,20 +88,21 @@ class RecordingViewController: BaseViewController {
     }
     
     private func navigateUsersToSettings() {
-        presentSimpleAlert(title: "Camera Permissions Restricted",
-                           message: "Go to settings and enable camera permissions to record content.",
-                           okayTitle: "Go to Settings") {
-            
-            guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
-                return
-            }
-            
-            if UIApplication.shared.canOpenURL(settingsUrl) {
-                UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
-                    print("Settings opened: \(success)") // Prints true
-                })
-            }
-        }
+        view.backgroundColor = .purple
+//        presentSimpleAlert(title: "Camera Permissions Restricted",
+//                           message: "Go to settings and enable camera permissions to record content.",
+//                           okayTitle: "Go to Settings") {
+//            
+//            guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+//                return
+//            }
+//            
+//            if UIApplication.shared.canOpenURL(settingsUrl) {
+//                UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
+//                    print("Settings opened: \(success)") // Prints true
+//                })
+//            }
+//        }
     }
     
     private func setupCamera() {
@@ -187,7 +188,7 @@ extension RecordingViewController: AVCaptureFileOutputRecordingDelegate {
     
     private func stopVideoCapture() {
         print("[RecordingViewController]: stopping recording")
-        shutterButton.layer.borderColor = UIColor.white.cgColor
+        shutterButton.layer.borderColor = UIColor.backgroundWhite.cgColor
         guard let captureSession = self.captureSession, captureSession.isRunning else {
             print("[RecordingViewController]: No capture session was found and recording could not be stopped.")
             return

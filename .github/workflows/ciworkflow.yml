@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/cache@v3
+      with:
+        path: /Users/Betzer/Library/Developer/Xcode/DerivedData/MatPro-fvcovsxngxwyljcgyfdjlkwrhape/SourcePackages/checkouts
+        key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
+        restore-keys: |
+           ${{ runner.os }}-spm-
+    
+    - uses: actions/checkout@v2
+    
+    - name: Select Xcode
+      run: sudo xcode-select -switch /Applications/Xcode_13.2.1.app
+      
+    - name: Build and test
+      run: xcodebuild clean build test -project MatPro/MatPro.xcodeproj -scheme "MatPro" -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 13 Pro" ONLY_ACTIVE_ARCH=NO CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+      
